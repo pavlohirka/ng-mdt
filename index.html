@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>СБУ — картка затримання</title>
+<title>NG MDT — картка служби</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -293,7 +293,7 @@ pre.say{white-space:pre-wrap;font:400 14px/1.55 var(--f-body);margin:0}
   color-scheme:dark}
 body{background:var(--ink);font-weight:500}
 .strip{background:var(--bar);border-bottom:1px solid var(--line)}
-.mark svg path{stroke:var(--brass)}
+.mark svg:not(.nglogo) path{stroke:var(--brass)}
 .mark b{font:800 16px var(--f-display);letter-spacing:-.01em;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 h1{font:800 28px/1.15 var(--f-display);letter-spacing:-.02em}
 h2{font:700 17px/1.3 var(--f-display);letter-spacing:-.01em}
@@ -456,8 +456,8 @@ input.f,select.f,textarea.f,.search input{font-size:16px}
 
 /* ===== Службовий планшет MDT: бічне меню, рядок статусу, термінальні дані ===== */
 :root:root:root,:root:root:root[data-theme],:root:root:root:not([data-theme="light"]){
-  --ink:#0a0e13; --panel:#10161e; --well:#0c1118; --line:#1d2733; --line2:#2a3747;
-  --text:#d6dee8; --head:#f1f5f9; --mute:#7a8a9c; --brass:#38bdf8; --brass-ink:#04121c;
+  --ink:#060b0c; --panel:#0c1517; --well:#091113; --line:#16272a; --line2:#213a3e;
+  --text:#d3e4e5; --head:#f4fbfb; --mute:#7c9a9d; --brass:#44ebe1; --brass-ink:#022523; --brass2:#06a6a0;
   --red:#f43f5e; --green:#22c55e; --amber:#f59e0b;
   --nbtext:#fda4af; --nbbg:rgba(244,63,94,.12);
   --f-display:"Barlow Condensed","Barlow",system-ui,sans-serif;
@@ -467,12 +467,12 @@ input.f,select.f,textarea.f,.search input{font-size:16px}
 }
 
 body{background:var(--ink);color:var(--text);font:500 15px/1.45 var(--f-body);
-  background-image:linear-gradient(rgba(56,189,248,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.035) 1px,transparent 1px);background-size:32px 32px}
+  background-image:linear-gradient(rgba(68,235,225,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(68,235,225,.035) 1px,transparent 1px);background-size:32px 32px}
 
 /* рядок статусу */
 .strip{background:#070a0e;border-bottom:1px solid var(--line);backdrop-filter:none}
 .strip-in{padding-top:8px;padding-bottom:8px}
-.mark svg path{stroke:var(--brass)}
+.mark svg:not(.nglogo) path{stroke:var(--brass)}
 .mark b{font:700 17px var(--f-display);letter-spacing:.06em;text-transform:uppercase;color:var(--head)}
 .mark span{font:500 11px var(--f-mono);color:var(--green);letter-spacing:.02em}
 .mark span::before{content:"● ";color:var(--green)}
@@ -482,7 +482,7 @@ body{background:var(--ink);color:var(--text);font:500 15px/1.45 var(--f-body);
 .pill{padding:5px 10px}
 .pill output{font:600 15px var(--f-mono);color:var(--head)}
 .who button{border:1px solid var(--line2);border-radius:3px;background:var(--panel);font:600 12px var(--f-mono);color:var(--mute);text-transform:uppercase}
-.who button[aria-pressed="true"]{border-color:var(--brass);color:var(--brass);background:rgba(56,189,248,.08)}
+.who button[aria-pressed="true"]{border-color:var(--brass);color:var(--brass);background:rgba(68,235,225,.08)}
 
 h1{font:700 26px/1.1 var(--f-display);letter-spacing:.04em;text-transform:uppercase;color:var(--head)}
 .lead{font-size:13.5px;color:var(--mute)}
@@ -531,7 +531,7 @@ h3{font:700 12px var(--f-display);letter-spacing:.1em;text-transform:uppercase}
 .alert.mid::before{content:"[~]";font:700 12px var(--f-mono);color:var(--amber)}
 .alert.ok::before{content:"[✓]";font:700 12px var(--f-mono);color:var(--green)}
 
-.next .n{width:38px;height:38px;border:1px solid var(--brass);border-radius:3px;background:rgba(56,189,248,.1);color:var(--brass);font:700 16px var(--f-mono)}
+.next .n{width:38px;height:38px;border:1px solid var(--brass);border-radius:3px;background:rgba(68,235,225,.1);color:var(--brass);font:700 16px var(--f-mono)}
 .next .done-all{border-color:var(--green);color:var(--green);background:rgba(34,197,94,.1)}
 .next b{font:700 18px var(--f-display);letter-spacing:.04em;text-transform:uppercase;color:var(--head)}
 .next small{font:500 11px var(--f-mono);text-transform:uppercase}
@@ -555,7 +555,7 @@ input.f:focus,select.f:focus,textarea.f:focus{border-color:var(--brass);box-shad
 .chips .addchip{border-style:dashed;color:var(--brass);font-family:var(--f-body)}
 .tag{border-radius:2px;font:700 10px var(--f-mono);text-transform:uppercase;letter-spacing:.04em;padding:2px 6px;background:var(--line);color:var(--mute)}
 .tag.nb{background:rgba(244,63,94,.14);color:var(--red)}
-.tag.sbu{background:rgba(56,189,248,.14);color:var(--brass)}
+.tag.sbu{background:rgba(68,235,225,.14);color:var(--brass)}
 .tag.cond{background:rgba(245,158,11,.14);color:var(--amber)}
 .badge{background:var(--red);color:#fff;border-radius:2px;font-family:var(--f-mono)}
 .sum div,.items li,.deadline{background:var(--well);border:1px solid var(--line);border-radius:3px}
@@ -606,7 +606,7 @@ input.f:focus,select.f:focus,textarea.f:focus{border-color:var(--brass);box-shad
   .tabs{top:0;bottom:0;left:0;right:auto;width:96px;transform:none;border-top:0;border-right:1px solid var(--line);padding-top:72px}
   .tabs-in{display:flex;flex-direction:column;gap:2px;max-width:none}
   .tabs button{min-height:68px;border-left:3px solid transparent}
-  .tabs button[aria-selected="true"]{border-left-color:var(--brass);background:rgba(56,189,248,.06)}
+  .tabs button[aria-selected="true"]{border-left-color:var(--brass);background:rgba(68,235,225,.06)}
   .tabs .fab{order:-1;margin-bottom:10px;border-left:0}
   .tabs .fab i{margin:0;box-shadow:0 0 18px -4px var(--brass)}
   .strip{padding-left:96px;position:sticky;z-index:25}
@@ -664,16 +664,16 @@ p,.small,.kv dd,.say{letter-spacing:0}
 .btn{box-shadow:none}
 .btn:hover:not(:disabled){box-shadow:none;filter:brightness(1.08)}
 .btn.line,.btn.line.sm{background:transparent;border:1px solid var(--line2);color:var(--text);box-shadow:none;filter:none}
-.btn.line:hover:not(:disabled){background:rgba(56,189,248,.06);border-color:var(--brass);color:var(--head);box-shadow:none;filter:none}
+.btn.line:hover:not(:disabled){background:rgba(68,235,225,.06);border-color:var(--brass);color:var(--head);box-shadow:none;filter:none}
 .btn.sm{padding:6px 12px;font-size:12px;letter-spacing:.08em}
 .btn:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
 /* рядок профілю в налаштуваннях — як пункт списку */
 #setAgent{width:100%;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;margin-bottom:8px;
   background:var(--well);border:1px solid var(--line2);border-radius:3px;color:var(--head);
   font:600 14px var(--f-body);letter-spacing:0;text-transform:none;text-align:left}
-#setAgent:hover{border-color:var(--brass);background:rgba(56,189,248,.05)}
+#setAgent:hover{border-color:var(--brass);background:rgba(68,235,225,.05)}
 #setAgent span:last-child{color:var(--mute);font-size:18px;line-height:1}
-#setAgentTxt::before{content:"Профіль агента";display:block;font:600 10.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:2px}
+#setAgentTxt::before{content:"Профіль";display:block;font:600 10.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:2px}
 /* нижнє меню (телефон) */
 .tabs-in{align-items:stretch}
 /* бічне меню (комп'ютер) */
@@ -682,7 +682,7 @@ p,.small,.kv dd,.say{letter-spacing:0}
   .tabs-in{display:flex;flex-direction:column;align-items:stretch;gap:0;width:100%}
   .tabs button{width:100%;min-height:64px;margin:0;padding:10px 4px;border:0;border-radius:0;position:relative;justify-content:center;gap:5px;font-size:11px;letter-spacing:.08em}
   .tabs button::before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:3px;background:transparent;border-radius:0 2px 2px 0}
-  .tabs button[aria-selected="true"]{background:rgba(56,189,248,.08);color:var(--brass)}
+  .tabs button[aria-selected="true"]{background:rgba(68,235,225,.08);color:var(--brass)}
   .tabs button[aria-selected="true"]::before{background:var(--brass)}
   .tabs button:hover:not([aria-selected="true"]){background:rgba(255,255,255,.03);color:var(--head)}
   .tabs button svg{width:22px;height:22px}
@@ -695,6 +695,28 @@ p,.small,.kv dd,.say{letter-spacing:0}
 .next{align-items:start}
 .next .intro{margin-left:-50px}
 .next .intro .say{font-size:14px;line-height:1.5}
+.mark svg:not(.nglogo) .ng{font:700 10.5px "Barlow Condensed","Barlow",system-ui,sans-serif;letter-spacing:.02em;fill:var(--brass);stroke:none}
+.mark>svg.nglogo{width:50px;height:25px;flex:none}
+/* ===== кольори логотипа NG: бірюза #44ebe1 → #06a6a0, біла обводка, чорна основа ===== */
+.btn:not(.line):not(.ok):not(.danger){background:linear-gradient(180deg,var(--brass),var(--brass2));border-color:var(--brass2);color:var(--brass-ink)}
+.tabs .fab i{background:linear-gradient(180deg,var(--brass),var(--brass2));color:var(--brass-ink)}
+.strip{background:#040809;border-bottom-color:rgba(68,235,225,.18)}
+.tabs{background:#040809}
+@media(min-width:960px){.tabs{border-right-color:rgba(68,235,225,.14)}}
+.panel{border-color:var(--line)}
+.panel::after{border-color:var(--brass)}
+h2::before{background:linear-gradient(180deg,var(--brass),var(--brass2))}
+.ringbox[data-s="idle"]{color:var(--brass)}
+.mark span{color:var(--brass)}
+.mark span::before{color:var(--green)}
+.say mark{color:var(--brass)}
+pre.say{color:#b8f5f1}
+.toast{background:#f4fbfb;color:#041012}
+.toast button{background:linear-gradient(180deg,var(--brass),var(--brass2));color:var(--brass-ink)}
+body[data-det="0"] .det-only,body[data-det="0"] #pill,body[data-det="0"] #addW2,body[data-det="0"] #who{display:none!important}
+.orgnow{margin-bottom:16px}.orgref{margin-bottom:16px}
+.orgnow .grid.two,.orgref{display:grid;gap:16px}
+@media(min-width:960px){.orgnow .grid.two{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -703,8 +725,8 @@ p,.small,.kv dd,.say{letter-spacing:0}
   <div class="strip-in">
     <div class="bar">
       <div class="mark">
-        <svg width="28" height="30" viewBox="0 0 28 30" aria-hidden="true"><path d="M14 1 26 5v9c0 7.5-5 12.5-12 15C7 26.5 2 21.5 2 14V5z" fill="none" stroke="#d6a84b" stroke-width="2"/><path d="M14 8v13M9 12h10" stroke="#d6a84b" stroke-width="2" stroke-linecap="round"/></svg>
-        <div style="min-width:0"><b id="brandB">Картка СБУ</b><span id="whoLabel">штат NG · затримання</span></div>
+        <svg class="nglogo" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1022 507" role="img" aria-label="NG"><g filter="url(#ngA)"><path fill="#000" d="m196.574 72.009-126.4 361c-.682 1.950.766 3.991 2.832 3.991h128.168a3 3 0 0 0 2.821-1.977L279.277 227.5l92.209 207.717a3 3 0 0 0 2.742 1.783h462.337a3 3 0 0 0 2.866-2.114l111.644-361A3 3 0 0 0 948.209 70H519.372a3 3 0 0 0-2.816 1.966L444.777 267.5 360.06 71.808A3 3 0 0 0 357.307 70H199.406a3 3 0 0 0-2.832 2.009"/><path stroke="#44ebe1" stroke-width="10" d="m196.574 72.009-126.4 361c-.682 1.950.766 3.991 2.832 3.991h128.168a3 3 0 0 0 2.821-1.977L279.277 227.5l92.209 207.717a3 3 0 0 0 2.742 1.783h462.337a3 3 0 0 0 2.866-2.114l111.644-361A3 3 0 0 0 948.209 70H519.372a3 3 0 0 0-2.816 1.966L444.777 267.5 360.06 71.808A3 3 0 0 0 357.307 70H199.406a3 3 0 0 0-2.832 2.009Z"/></g><path stroke="#fff" stroke-width="5" d="M357.307 67.5a5.5 5.5 0 0 1 5.047 3.315l82.232 189.951 69.623-189.662a5.5 5.5 0 0 1 5.163-3.604h428.837c3.588 0 6.183 3.366 5.347 6.793l-.092.332-111.645 361a5.5 5.5 0 0 1-5.254 3.875H374.228a5.5 5.5 0 0 1-5.027-3.269l-89.69-202.043-73.166 201.688a5.5 5.5 0 0 1-5.170 3.624H73.005c-3.788 0-6.441-3.741-5.190-7.317l126.4-361a5.5 5.5 0 0 1 5.190-3.683z"/><path fill="url(#ngB)" stroke="#fff" stroke-width="10" d="m871.777 172.5 25-71.5h-245c-76 3.200-114 49-123.500 71.500l-57.500 167.500c-21.200 60.400 21.500 75.500 45.500 75.500h208.500c48.800-4 74-29.500 79.500-43l45.500-139h-157l-22.500 62.500h81.500l-14 44h-176l39.500-119.500c12.500-35 36.500-47.333 50.500-48z"/><defs><linearGradient id="ngB" x1="680.912" x2="680.912" y1="101" y2="415.5" gradientUnits="userSpaceOnUse"><stop stop-color="#44ebe1"/><stop offset="1" stop-color="#06a6a0"/></linearGradient><filter id="ngA" width="1021.21" height="507" x="0" y="0" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset/><feGaussianBlur stdDeviation="32.5"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix values="0 0 0 0 0.266667 0 0 0 0 0.921569 0 0 0 0 0.882353 0 0 0 1 0"/><feBlend in2="BackgroundImageFix" result="effect1_dropShadow_1926_27"/><feBlend in="SourceGraphic" in2="effect1_dropShadow_1926_27" result="shape"/></filter></defs></svg>
+        <div style="min-width:0"><b id="brandB">NG MDT</b><span id="whoLabel">штат NG · затримання</span></div>
       </div>
       <button class="pill" id="pill" data-s="idle" aria-label="Перейти до таймера"><i class="dot"></i><output id="pillT">60:00</output></button>
       <button class="icon-btn" id="addW2" aria-label="Додати затриманого" title="Додати затриманого"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-3.9 3.1-7 7-7s7 3.1 7 7M19 8v6M16 11h6"/></svg></button>
@@ -718,7 +740,8 @@ p,.small,.kv dd,.say{letter-spacing:0}
 
 <!-- ЗАРАЗ -->
 <section class="view" id="v-now" aria-label="Зараз">
-  <div class="grid two">
+  <div id="orgNow" class="orgnow" hidden></div>
+  <div class="grid two det-only">
     <div class="grid">
       <div class="panel">
         <div class="hero">
@@ -756,11 +779,11 @@ p,.small,.kv dd,.say{letter-spacing:0}
           <summary>Усі кроки затримання</summary>
           <ol class="steps" id="steps">
             <li><label><input type="checkbox"><span class="n"></span><span class="t"><b>Кайданки.</b> Припинити правопорушення, знерухомити.</span></label></li>
-            <li><label><input type="checkbox"><span class="n"></span><span class="t"><b>Представитися на вимогу:</b> відомство, посада, звання, жетон. У масці — позивний і номер жетона.</span></label></li>
+            <li><label><input type="checkbox"><span class="n"></span><span class="t" id="liIntro"><b>Представитися на вимогу:</b> відомство, посада, звання, жетон. У масці — позивний і номер жетона.</span></label></li>
             <li><label><input type="checkbox"><span class="n"></span><span class="t"><b>Оголосити підстави і статті.</b></span></label></li>
             <li><label><input type="checkbox"><span class="n"></span><span class="t"><b>Зачитати права</b> до першого питання по суті, найпізніше — до посадки в КПЗ.</span></label></li>
             <li><label><input type="checkbox"><span class="n"></span><span class="t"><b>Поверхневий огляд</b> лише на зброю, без кишень.</span></label></li>
-            <li><label><input type="checkbox"><span class="n"></span><span class="t"><b>Доставити</b> до приміщення СБУ або ізолятора.</span></label></li>
+            <li><label><input type="checkbox"><span class="n"></span><span class="t" id="liDeliver"><b>Доставити</b> до приміщення СБУ або ізолятора.</span></label></li>
             <li><label><input type="checkbox"><span class="n"></span><span class="t"><b>Забезпечити права:</b> дзвінок до 3 хв, адвокат, за потреби прокурор або ДБР.</span></label></li>
             <li><label><input type="checkbox"><span class="n"></span><span class="t"><b>Протокол</b> і запис у базу правопорядку.</span></label></li>
           </ol>
@@ -842,6 +865,7 @@ p,.small,.kv dd,.say{letter-spacing:0}
 <section class="view" id="v-ref" aria-label="Довідка">
   <h1>Довідка</h1>
   <p class="lead">Обшук, сила, особливі випадки, ордер, зброя і території.</p>
+  <div id="orgRef" class="orgref" hidden></div>
   <div class="grid two">
     <div class="grid">
       <div class="panel warnline">
@@ -961,18 +985,19 @@ p,.small,.kv dd,.say{letter-spacing:0}
 <div class="sheet" id="agentSheet" role="dialog" aria-modal="true" aria-labelledby="agentT">
   <div class="sheet-h">
     <div class="grab"></div>
-    <div class="row between" style="margin-bottom:4px"><h2 id="agentT" style="margin:0">Профіль агента</h2><button class="icon-btn" data-close aria-label="Закрити">✕</button></div>
+    <div class="row between" style="margin-bottom:4px"><h2 id="agentT" style="margin:0">Профіль</h2><button class="icon-btn" data-close aria-label="Закрити">✕</button></div>
     <p class="small mute" id="agentIntroTxt" style="margin-bottom:10px">Заповніть один раз — картка підставлятиме ці дані в протокол і в текст, яким ви представляєтесь.</p>
   </div>
   <form class="sheet-b" id="agentForm" novalidate>
+    <div class="field" style="margin-bottom:10px"><label for="aOrg">Структура</label><select class="f" id="aOrg"></select></div>
     <div class="fields two">
       <div class="field"><label for="aName">Ім'я та прізвище</label><input class="f" id="aName" placeholder="Іван Петренко" autocomplete="off"></div>
       <div class="field"><label for="aCall">Позивний</label><input class="f" id="aCall" placeholder="Сокіл" autocomplete="off"></div>
       <div class="field"><label for="aRank">Звання / посада</label><select class="f" id="aRank"><option value="">— оберіть —</option></select></div>
       <div class="field"><label for="aUnit">Підрозділ</label><select class="f" id="aUnit"><option value="">— оберіть —</option></select></div>
-      <div class="field"><label for="aBadge">Номер жетона</label><input class="f" id="aBadge" inputmode="numeric" placeholder="0417" autocomplete="off"></div>
+      <div class="field"><label for="aBadge" id="aBadgeL">Номер жетона</label><input class="f" id="aBadge" inputmode="numeric" placeholder="0417" autocomplete="off"></div>
     </div>
-    <div class="set" style="margin-top:6px">
+    <div class="set" style="margin-top:6px" id="maskRow">
       <label><span>Служу в масці<small id="maskHint">Тоді представляєтесь позивним і жетоном, без імені (ст. 9.2–9.3 Закону про СБУ)</small></span><input type="checkbox" class="sw" id="aMask"></label>
     </div>
     <h3>Як ви представитесь</h3>
@@ -1230,8 +1255,8 @@ function drawWho(){
    +(S.list.length>1?`<button class="ghost" id="delW">Закрити ${esc(nameOf(D()))}</button>`:'');
   $('who').hidden=S.list.length<2;
   requestAnimationFrame(()=>{const a=$('who').querySelector('[aria-pressed="true"]');if(a)a.scrollIntoView({block:'nearest',inline:'nearest'})});
-  $('brandB').textContent=S.agent?(S.agent.mask?S.agent.call:S.agent.name):'Картка СБУ';
-  $('whoLabel').textContent=S.list.length>1?`${S.list.length} затриманих · активний: ${nameOf(D())}`:(S.agent?`${S.agent.unit||'СБУ'} · №${S.agent.badge}`:'Профіль не заповнено');
+  $('brandB').textContent=S.agent?(S.agent.mask?S.agent.call:S.agent.name):'NG MDT';
+  $('whoLabel').textContent=S.list.length>1?`${S.list.length} затриманих · активний: ${nameOf(D())}`:(S.agent?`${ORG().short}${S.agent.unit?' · '+S.agent.unit:''} · №${S.agent.badge}`:'Профіль не заповнено');
 }
 $('who').addEventListener('click',e=>{
   const b=e.target.closest('button');if(!b)return;
@@ -1245,34 +1270,106 @@ $('who').addEventListener('click',e=>{
 function addDet(){S.seq++;const d=newDet(S.seq);S.list.push(d);S.active=d.id;save();renderAll();show('v-now');toast(`Додано: ${d.label}`)}
 $('addW2').onclick=addDet;
 /* ---------- профіль агента ---------- */
-const RANKS=['Стажер','Молодший агент','Агент','Старший агент','Молодший оперуповноважений','Оперуповноважений','Старший оперуповноважений','Інструктор','Керівник групи','Керівник сектору','Заступник начальника відділу','Начальник відділу','Начальник управління','Заступник Голови СБУ','Голова СБУ'];
-const UNITS=['ОРВ','АТЦ','ЦСО «А»','ДЕБ','ВВБ','ВКПП','Академія СБУ','Керівництво СБУ'];
+/* ---------- структури ---------- */
+const P=(h,b,c)=>`<div class="panel${c?' '+c:''}"><h2>${h}</h2>${b}</div>`;
+const KV=a=>`<dl class="kv">${a.map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl>`;
+const ORGS={
+ sbu:{short:'СБУ',full:'Служба безпеки штату NG',det:1,badge:'жетон',mask:1,
+  ranks:['Стажер','Молодший агент','Агент','Старший агент','Молодший оперуповноважений','Оперуповноважений','Старший оперуповноважений','Інструктор','Керівник групи','Керівник сектору','Заступник начальника відділу','Начальник відділу','Начальник управління','Заступник Голови СБУ','Голова СБУ'],
+  units:['ОРВ','АТЦ','ЦСО «А»','ДЕБ','ВВБ','ВКПП','Академія СБУ','Керівництво СБУ'],
+  introHint:'Відомство, посада, звання, жетон. У масці — позивний і номер.',
+  deliver:['Доставити до СБУ чи ізолятора','<b>Доставити</b> до приміщення СБУ або ізолятора.']},
+ npu:{short:'НПУ',full:'Національна поліція штату NG',det:1,badge:'жетон',
+  ranks:['Кадет поліції','Рядовий поліції','Капрал поліції','Сержант поліції','Старший сержант поліції','Молодший лейтенант поліції','Лейтенант поліції','Старший лейтенант поліції','Капітан поліції','Майор поліції','Підполковник поліції','Полковник поліції','Начальник сектора поліції','Перший заступник Генерала поліції','Генерал Національної поліції'],
+  units:['ВРПП','ВКР','КОРД','УВБ','УКЗ'],
+  introHint:'Прізвище, спеціальне звання і підрозділ (п. 4.16 Статуту НПУ).',
+  deliver:['Доставити до ІТТ НПУ','<b>Доставити</b> до ІТТ НПУ. КОРД передає затриманого патрульним чи слідчим з відео і рапортом.'],
+  ref:()=>P('Національна поліція',KV([
+   ['Можна','перевіряти документи, затримувати у випадках закону, поверхнева перевірка й обшук за законом, фото- і відеофіксація (ст. 3.2 Закону)'],
+   ['Боді-камера','безперервно всю зміну, запис зберігати 48 год (п. 4.8)'],
+   ['КОРД','після силового затримання передає особу патрульним чи слідчим з копією відео і рапортом (п. 4.15)'],
+   ['Евакуація авто','лише ВРПП службовим евакуатором (п. 4.17)'],
+   ['Зйомка поліції','громадяни мають право, якщо не заважають (ст. 2.4 Закону)'],
+   ['Контроль','прокуратура — нагляд і процесуальне керівництво; злочини поліцейських розслідує ДБР (ст. 6.1–6.2)']]),'brassline')},
+ dbr:{short:'ДБР',full:'Державне бюро розслідувань штату NG',det:1,badge:'посвідчення',
+  ranks:['Стажер','Агент','Старший агент','Слідчий в особливо важливих справах','Начальник слідчого управління','Перший заступник Директора ДБР','Директор ДБР'],
+  units:['Слідчо-оперативний склад','Керівний склад','Навчальний корпус'],
+  introHint:'Прізвище, посада, посвідчення або знак. Крім санкціонованих негласних заходів (п. 4.16).',
+  deliver:['Доставити до ДБР','<b>Доставити</b> до ДБР. Затримали посадовця — викликати чергового прокурора і керівництво його органу.'],
+  ref:()=>P('Підслідність ДБР',KV([
+   ['Кого','держслужбовці, співробітники НПУ і СБУ, військові НГУ, посадові особи держорганізацій (ст. 2.1 Закону)'],
+   ['Також','члени ОЗГ, якщо діяли разом із ними; інші особи, якщо діяння пов\'язане з їхньою діяльністю'],
+   ['Недоторканні','лише за постановою Генпрокурора чи заступників (ст. 2.1, п. 13.4 Статуту)'],
+   ['Затримали посадовця','після доставлення викликати чергового прокурора і керівництво органу затриманого (п. 13.3)'],
+   ['Спецоперація щодо держорганізації','вичерпні підстави, погодження Директора ДБР і прокуратури (п. 6.6)'],
+   ['Незалежність','керівництво НПУ, СБУ, НГУ не може скасовувати рішення ДБР чи припиняти розслідування (ст. 1.5)']]),'brassline')},
+ ngu:{short:'НГУ',full:'Національна гвардія штату NG',det:1,nowTop:1,badge:'жетон',
+  ranks:['Рядовий','Старший солдат','Молодший сержант','Сержант','Старший сержант','Штаб-сержант','Майстер-сержант','Молодший лейтенант','Лейтенант','Старший лейтенант','Капітан','Майор','Підполковник','Полковник','Генерал'],
+  units:['Штаб частини','Лінійний взвод','Навчальний центр','ВП НГУ','«Омега»','Логістика','Аеромобільний підрозділ'],
+  introHint:'Військове звання, підрозділ, прізвище, жетон.',
+  deliver:['Передати НПУ, СБУ чи ДБР','<b>Передати</b> затриманого поза Форт-Занкудо слідчим НПУ, СБУ чи ДБР за підслідністю — не пізніше 15 хв.'],
+  ref:()=>P('Затримання гвардійцями · ст. 13 Закону про НГУ',KV([
+   ['Мирний час','самостійно — лише на території Форт-Занкудо за КПП'],
+   ['Поза частиною','лише у спільному наряді з НПУ або СБУ'],
+   ['Воєнний стан','патрулі, блокпости, перевірка документів, поверхневий огляд авто, самостійне затримання'],
+   ['Передача','поза Форт-Занкудо — НПУ, СБУ чи ДБР за підслідністю протягом 15 хв з моменту обмеження свободи']]),'warnline')},
+ dvk:{short:'ДВК',full:'Державна виправна колонія штату NG',det:1,badge:'жетон',
+  ranks:['Стажер (рядовий внутрішньої служби)','Курсант академії','Старший курсант','Молодший сержант внутрішньої служби','Сержант внутрішньої служби','Старший сержант внутрішньої служби','Старшина внутрішньої служби','Молодший лейтенант внутрішньої служби','Лейтенант внутрішньої служби','Старший лейтенант внутрішньої служби','Капітан внутрішньої служби','Майор внутрішньої служби','Підполковник внутрішньої служби','Полковник внутрішньої служби','Генерал-майор внутрішньої служби'],
+  units:['СБ','ГОРС','ОПК','ВРП','Навчальний відділ','Керівництво ДВК'],
+  introHint:'Спеціальне звання, підрозділ, прізвище, жетон.',
+  deliver:['Прийняти до ДВК','<b>Прийом:</b> повний обшук і реєстрація в базі ДВК (ст. 11.2 Закону).'],
+  ref:()=>P('Повноваження ДВК',KV([
+   ['Огляд','засуджених, речей і камер — будь-коли (ст. 3.1)'],
+   ['Охоронювана зона','вимагати документи, оглядати авто (ст. 3.2); невидане адміністрацією — конфіскувати (ст. 3.3)'],
+   ['ДІЗО','до 30 хв: бійка, контрабанда, підкуп, непокора (ст. 7)'],
+   ['Зброя без попередження','збройний чи груповий напад, захоплення зброї чи заручників, втеча озброєного чи з насильством. Інакше — вигук і постріл у повітря (ст. 5)'],
+   ['УДЗ','виклик чергового прокурора по рації: відповідь 5 хв, прибуття 10 хв (ст. 9)'],
+   ['Адвокат','з документами, огляд речей перед входом (ст. 10.2)']]),'brassline')}
+};
+const ORG=()=>ORGS[(S.agent&&S.agent.org)||'sbu']||ORGS.sbu;
+$('aOrg').innerHTML=Object.entries(ORGS).map(([k,o])=>`<option value="${k}">${o.short} — ${o.full.replace(' штату NG','')}</option>`).join('');
+function fillOrgSelects(org,rank,unit){
+  const o=ORGS[org]||ORGS.sbu;
+  $('aRank').innerHTML='<option value="">— оберіть —</option>'+o.ranks.map(r=>`<option>${r}</option>`).join('');
+  $('aUnit').innerHTML='<option value="">— оберіть —</option>'+o.units.map(u=>`<option>${u}</option>`).join('');
+  $('aRank').value=o.ranks.includes(rank)?rank:'';$('aUnit').value=o.units.includes(unit)?unit:'';
+  $('maskRow').hidden=!o.mask;$('aBadgeL').textContent=o.badge==='жетон'?'Номер жетона':`Номер ${o.badge==='бейджа'?'бейджа':o.badge==='бейдж'?'бейджа':'посвідчення'}`;
+}
+function applyOrg(){
+  const o=ORG(),det=!!o.det;
+  document.body.dataset.det=det?'1':'0';
+  $('liIntro').innerHTML=`<b>Представитися на вимогу:</b> ${o.introHint||''}`;
+  $('liDeliver').innerHTML=o.deliver?o.deliver[1]:'';
+  STEP_TITLES[5]=o.deliver?o.deliver[0]:STEP_TITLES[5];STEP_HINT[1]=o.introHint||STEP_HINT[1];
+  const now=o.now?o.now():(o.nowTop&&o.ref?o.ref():'');$('orgNow').innerHTML=now?(o.now?`<div class="grid two">${now}</div>`:now):'';$('orgNow').hidden=!now;
+  const ref=o.ref?o.ref():'';$('orgRef').innerHTML=ref;$('orgRef').hidden=!ref;
+}
 const MASK_UNITS=['ОРВ','АТЦ','ЦСО «А»','ДЕБ','ВВБ'];
-$('aRank').insertAdjacentHTML('beforeend',RANKS.map(r=>`<option>${r}</option>`).join(''));
-$('aUnit').insertAdjacentHTML('beforeend',UNITS.map(u=>`<option>${u}</option>`).join(''));
 const lc=s=>s?s[0].toLowerCase()+s.slice(1):'';
 function introOf(a){
   if(!a)return '';
-  const unit=a.unit&&!/Керівництво|Академія/.test(a.unit)?a.unit+' ':'';
-  if(a.mask)return `Служба безпеки штату NG${a.unit?', '+a.unit:''}. Позивний «${a.call||'—'}», жетон №${a.badge||'—'}.`;
-  return `Служба безпеки штату NG, ${lc(a.rank)||'співробітник'} ${unit}${a.name||'—'}, жетон №${a.badge||'—'}.`.replace(/\s+,/g,',').replace(/\s{2,}/g,' ');
+  const o=ORGS[a.org||'sbu']||ORGS.sbu,b=`${o.badge} №${a.badge||'—'}`;
+  if(a.mask&&o.mask)return `${o.full}${a.unit?', '+a.unit:''}. Позивний «${a.call||'—'}», ${b}.`;
+  const unit=a.unit&&!/Керівництво|Академія|склад|корпус/.test(a.unit)?a.unit+' ':'';
+  return `${o.full}, ${lc(a.rank)||'співробітник'} ${unit}${a.name||'—'}, ${b}.`.replace(/\s+,/g,',').replace(/\s{2,}/g,' ');
 }
 function officerLine(){
   const a=S.agent;if(!a)return S.officer||'';
-  const who=a.mask?`позивний «${a.call}»`:a.name;
-  return [[a.rank,a.unit].filter(Boolean).join(' '),who,a.badge?`жетон №${a.badge}`:''].filter(Boolean).join(', ');
+  const o=ORGS[a.org||'sbu']||ORGS.sbu,who=a.mask&&o.mask?`позивний «${a.call}»`:a.name;
+  return [[a.rank,a.unit].filter(Boolean).join(' '),who,a.badge?`${o.badge} №${a.badge}`:''].filter(Boolean).join(', ');
 }
-function readAgentForm(){return{name:$('aName').value.trim(),call:$('aCall').value.trim(),rank:$('aRank').value,unit:$('aUnit').value,badge:$('aBadge').value.trim().replace(/^№/,''),mask:$('aMask').checked}}
+function readAgentForm(){return{org:$('aOrg').value,name:$('aName').value.trim(),call:$('aCall').value.trim(),rank:$('aRank').value,unit:$('aUnit').value,badge:$('aBadge').value.trim().replace(/^№/,''),mask:$('aMask').checked&&!!ORGS[$('aOrg').value].mask}}
 function drawAgentPreview(){
   const a=readAgentForm(),ok=!a.unit||MASK_UNITS.includes(a.unit);
   $('aMask').disabled=!ok;if(!ok&&$('aMask').checked){$('aMask').checked=false;a.mask=false}
   $('maskHint').textContent=ok?'Тоді представляєтесь позивним і жетоном, без імені (ст. 9.2–9.3 Закону про СБУ)':'Маски дозволені лише ОРВ, АТЦ, ЦСО «А», ВВБ і ДЕБ';
   $('aPreview').textContent=introOf(a);$('aErr').hidden=true;
 }
+$('aOrg').addEventListener('change',()=>{fillOrgSelects($('aOrg').value,$('aRank').value,$('aUnit').value);if(!ORGS[$('aOrg').value].mask)$('aMask').checked=false;drawAgentPreview()});
 ['aName','aCall','aRank','aUnit','aBadge','aMask'].forEach(id=>$(id).addEventListener(id==='aMask'||id==='aRank'||id==='aUnit'?'change':'input',drawAgentPreview));
 function openAgent(first){
-  const a=S.agent||{};$('aName').value=a.name||'';$('aCall').value=a.call||'';$('aRank').value=a.rank||'';$('aUnit').value=a.unit||'';$('aBadge').value=a.badge||'';$('aMask').checked=!!a.mask;
-  $('aLater').hidden=!first;$('agentT').textContent=first?'Реєстрація агента':'Профіль агента';
+  const a=S.agent||{};$('aOrg').value=ORGS[a.org]?a.org:'sbu';fillOrgSelects($('aOrg').value,a.rank,a.unit);$('aName').value=a.name||'';$('aCall').value=a.call||'';$('aBadge').value=a.badge||'';$('aMask').checked=!!a.mask;
+  $('aLater').hidden=!first;$('agentT').textContent=first?'Ваш профіль':'Профіль';
   drawAgentPreview();if(openEl)closePanel();openPanel($('agentSheet'),$('aName'));
 }
 $('agentForm').addEventListener('submit',e=>{
@@ -1280,18 +1377,18 @@ $('agentForm').addEventListener('submit',e=>{
   if(!a.badge)err.push('номер жетона');
   if(a.mask?!a.call:!a.name)err.push(a.mask?'позивний':"ім'я та прізвище");
   if(err.length){$('aErr').textContent='Заповніть: '+err.join(', ')+'.';$('aErr').hidden=false;return}
-  S.agent=a;S.agentAsked=true;save();closePanel();drawAgent();toast('Профіль збережено');
+  S.agent=a;S.agentAsked=true;save();closePanel();applyOrg();drawAgent();toast('Профіль збережено');
 });
 $('aLater').onclick=()=>{S.agentAsked=true;save();closePanel()};
 $('aCopy').onclick=()=>copy($('aPreview').textContent,$('aCopy'));
 $('setAgent').onclick=()=>openAgent(false);
 $('pOfficerBtn').onclick=()=>openAgent(!S.agent);
-const mk=document.querySelector('.mark');mk.setAttribute('role','button');mk.tabIndex=0;mk.setAttribute('aria-label','Профіль агента');
+const mk=document.querySelector('.mark');mk.setAttribute('role','button');mk.tabIndex=0;mk.setAttribute('aria-label','Профіль');
 mk.addEventListener('click',()=>openAgent(!S.agent));mk.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openAgent(!S.agent)}});
 function drawAgent(){
   const a=S.agent,line=officerLine();
-  $('pOfficerBtn').textContent=line||'Зареєструватися як агент';$('pOfficerBtn').classList.toggle('empty',!line);
-  $('setAgentTxt').textContent=a?`${a.mask?a.call:a.name} · №${a.badge}`:'Зареєструватися як агент';
+  $('pOfficerBtn').textContent=line||'Заповнити профіль';$('pOfficerBtn').classList.toggle('empty',!line);
+  $('setAgentTxt').textContent=a?`${a.mask?a.call:a.name} · №${a.badge}`:'Заповнити профіль';
   drawWho();drawSteps();drawProto();
 }
 
@@ -1491,7 +1588,7 @@ function drawProto(){
 `ПРОТОКОЛ ЗАТРИМАННЯ
 Дата і час: ${when}
 Місце: ${p.place||'—'}
-Посадова особа: ${officerLine()||'—'}, Служба безпеки штату NG
+Посадова особа: ${officerLine()||'—'}, ${ORG().full}
 Затриманий: ${p.name||'—'}
 Підстава (ст. 14 ПК), статті:
   ${arts}
@@ -1561,7 +1658,7 @@ $('clearW').onclick=()=>{S.warrant=Array(6).fill(false);save();drawW()};
 function applyTheme(){delete document.documentElement.dataset.theme}
 
 
-function renderAll(){if($('pOfficerBtn')){const l=officerLine();$('pOfficerBtn').textContent=l||'Зареєструватися як агент';$('pOfficerBtn').classList.toggle('empty',!l);$('setAgentTxt').textContent=S.agent?`${S.agent.mask?S.agent.call:S.agent.name} · №${S.agent.badge}`:'Зареєструватися як агент'}applyTheme();document.documentElement.classList.toggle('big',!!S.opt.big);drawWho();drawSteps();drawCase();drawSeized();fillProtoInputs();drawProto();drawW();tick()}
+function renderAll(){if($('pOfficerBtn')){const l=officerLine();$('pOfficerBtn').textContent=l||'Заповнити профіль';$('pOfficerBtn').classList.toggle('empty',!l);$('setAgentTxt').textContent=S.agent?`${S.agent.mask?S.agent.call:S.agent.name} · №${S.agent.badge}`:'Заповнити профіль'}applyTheme();document.documentElement.classList.toggle('big',!!S.opt.big);applyOrg();drawWho();drawSteps();drawCase();drawSeized();fillProtoInputs();drawProto();drawW();tick()}
 renderAll();show(S.tab);setInterval(tick,250);
 if(!S.agent&&!S.agentAsked)setTimeout(()=>openAgent(true),400);
 </script>
