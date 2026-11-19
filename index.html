@@ -3,6 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="theme-color" content="#060b0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
 <title>NG MDT — картка служби</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -247,7 +251,7 @@ pre.say{white-space:pre-wrap;font:400 14px/1.55 var(--f-body);margin:0}
 
 /* ---------- bottom bar ---------- */
 .tabs{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(13,23,38,.97);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
-.tabs-in{max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);align-items:end}
+.tabs-in{max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(6,1fr);align-items:end}
 .tabs button{background:none;border:0;padding:8px 2px 10px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;font-weight:600;color:var(--mute);position:relative}
 .tabs button svg{width:22px;height:22px}
 .tabs button[aria-selected="true"]{color:var(--brass)}
@@ -717,6 +721,58 @@ body[data-det="0"] .det-only,body[data-det="0"] #pill,body[data-det="0"] #addW2,
 .orgnow{margin-bottom:16px}.orgref{margin-bottom:16px}
 .orgnow .grid.two,.orgref{display:grid;gap:16px}
 @media(min-width:960px){.orgnow .grid.two{grid-template-columns:1fr 1fr}}
+.tenp{margin-bottom:16px}.tenseg{grid-template-columns:repeat(3,1fr)!important;max-width:360px}
+#tenNote p{margin:0 0 6px}.tenh{font:600 11px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin:14px 0 6px}
+.kv.ten{display:grid!important;grid-template-columns:76px 1fr!important;gap:8px 12px!important}.kv.ten dt{font-family:var(--f-mono);color:var(--text);white-space:nowrap;margin:0!important}.kv.ten dd{margin:0!important}
+
+.rcodes{display:grid;gap:10px;margin-top:12px}
+.rg>span{display:block;font:600 10.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-bottom:6px}
+.rg>div{display:flex;flex-wrap:wrap;gap:6px}
+.rg button{font:600 13px var(--f-mono);padding:7px 10px;border-radius:3px;border:1px solid var(--line2);background:var(--well);color:var(--text);min-height:36px}
+.rg button[aria-pressed="true"]{border-color:var(--brass);color:var(--brass);background:rgba(68,235,225,.08)}
+#rOut.mute{color:var(--mute)}
+.c0{margin-top:12px;border-top:1px solid var(--line);padding-top:6px}
+.c0row{display:flex;align-items:center;gap:10px;padding:8px 0 2px}
+.c0row b{font:700 22px var(--f-mono)}.c0row .btn{margin-left:auto}
+.c0row[data-s="warn"] b{color:var(--amber,#f5b942)}.c0row[data-s="over"] b{color:var(--red,#ff5d5d)}
+.qclock{font:700 20px var(--f-mono)}.qclock[data-s="idle"]{color:var(--mute)}.qclock[data-s="warn"]{color:var(--amber,#f5b942)}.qclock[data-s="over"]{color:var(--red,#ff5d5d)}
+.qseg{max-width:320px}
+.qdet{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--mute);margin:8px 0}.qdet input{accent-color:var(--brass)}
+.qlist{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:4px}.qlist li{font-size:14px}.qlist b{font-family:var(--f-mono);color:var(--brass);margin-right:6px}
+.tag{font:600 10px var(--f-mono);text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--line2);padding:1px 5px;border-radius:3px;color:var(--mute)}
+.lstats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
+.lstats div{background:var(--well);border:1px solid var(--line);border-radius:3px;padding:8px 10px}
+.lstats b{display:block;font:700 22px var(--f-mono)}.lstats span{font-size:12px;color:var(--mute)}
+.log{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:2px;max-height:520px;overflow:auto}
+.log li{display:grid;grid-template-columns:44px 1fr auto;gap:10px;padding:8px 2px;border-bottom:1px solid var(--line);font-size:14px;align-items:start}
+.log li.empty{display:block;color:var(--mute);border:0}
+.log time{font:600 12px var(--f-mono);color:var(--mute);padding-top:2px}
+.log small{display:block;font:600 10px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--brass)}
+.log li[data-k="radio"]{color:var(--mute)}.log li[data-k="radio"] small{color:var(--mute)}
+.log button{background:none;border:0;color:var(--mute);padding:2px 6px}
+.promop{margin-bottom:16px}
+@media(max-width:400px){.tabs button{font-size:10px!important;letter-spacing:.02em!important}}
+#qForm,#noteForm{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}#qForm .btn,#noteForm .btn{white-space:nowrap;gap:6px;padding-left:14px;padding-right:14px}
+#promoP .wchk label,#qChk label{align-items:flex-start}#promoP .wchk input,#qChk input{margin-top:3px;flex:none}
+
+.rpp{margin-top:16px}.rpseg{margin:0!important;grid-template-columns:1fr 1fr!important;min-width:140px}
+.rplist{list-style:none;margin:0;padding:0;display:grid;gap:6px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.rplist li{display:flex;align-items:center;gap:8px;background:var(--well);border:1px solid var(--line);border-radius:3px;padding:6px 6px 6px 12px}
+.rplist b{font-weight:600;font-size:14px;flex:1}.rpb{display:flex;gap:4px}.rpb .btn{text-transform:none!important;letter-spacing:0!important;font-family:var(--f-mono);min-width:50px;padding:6px 8px}
+.rpb .btn.used{border-color:var(--brass);color:var(--brass)}
+#pipBtn[aria-pressed="true"]{color:var(--brass);border-color:var(--brass)}
+body.pipb{padding:0!important;margin:0;background:var(--ink,#060b0c);min-height:100vh}
+.pip{padding:12px;display:grid;gap:10px;color:var(--text)}
+.pip-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}.pip-h span{font-weight:600;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pip-h b{font:700 34px var(--f-mono)}.pip-h b[data-s="warn"]{color:var(--amber,#f5b942)}.pip-h b[data-s="over"],.pip-h b[data-s="end"]{color:var(--red,#ff5d5d)}
+.pip-st{font-size:12px;color:var(--mute);margin-top:-8px}
+.pip-n{background:var(--panel,#0c1517);border:1px solid var(--line);border-radius:3px;padding:10px;display:grid;gap:4px}
+.pip-n small{font:600 10px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--brass)}.pip-n b{font-size:16px}.pip-n .btn{justify-self:start;margin-top:4px}
+.pip-c0{font-size:13px;color:var(--mute)}.pip-c0 b{font-family:var(--f-mono);color:var(--text)}.pip-c0[data-s="warn"] b{color:var(--amber,#f5b942)}.pip-c0[data-s="over"] b{color:var(--red,#ff5d5d)}
+.pip-r small{display:block;font:600 10px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-bottom:6px}
+.pipLoc{width:100%;margin-bottom:8px;min-height:36px!important;padding:6px 10px!important;font-size:14px!important}
+#pCodes{display:flex;flex-wrap:wrap;gap:4px}#pCodes button{font:600 12px var(--f-mono);padding:6px 8px;border-radius:3px;border:1px solid var(--line2);background:var(--well);color:var(--text)}
+#pCodes button.used{border-color:var(--brass);color:var(--brass)}
 </style>
 </head>
 <body>
@@ -730,6 +786,7 @@ body[data-det="0"] .det-only,body[data-det="0"] #pill,body[data-det="0"] #addW2,
       </div>
       <button class="pill" id="pill" data-s="idle" aria-label="Перейти до таймера"><i class="dot"></i><output id="pillT">60:00</output></button>
       <button class="icon-btn" id="addW2" aria-label="Додати затриманого" title="Додати затриманого"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-3.9 3.1-7 7-7s7 3.1 7 7M19 8v6M16 11h6"/></svg></button>
+      <button class="icon-btn" id="pipBtn" aria-label="Міні-вікно поверх гри" title="Міні-вікно поверх гри" aria-pressed="false" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><rect x="12" y="11" width="8" height="7" rx="1"/></svg></button>
       <button class="icon-btn" id="openSet" aria-label="Налаштування"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg></button>
     </div>
     <div class="who" id="who" role="group" aria-label="Затримані"></div>
@@ -804,6 +861,11 @@ body[data-det="0"] .det-only,body[data-det="0"] #pill,body[data-det="0"] #addW2,
       </div>
     </div>
   </div>
+  <div class="panel det-only rpp" id="rpP">
+    <div class="row between"><h2 style="margin:0">Відіграші</h2><div class="seg rpseg" id="rpSeg" role="group" aria-label="Рід дієслів"><button type="button" data-sx="m">Він</button><button type="button" data-sx="f">Вона</button></div></div>
+    <p class="small mute" style="margin:6px 0 10px">Ім'я затриманого і вилучене підставляються з протоколу та справи. Натисніть, щоб скопіювати.</p>
+    <ul class="rplist" id="rpList"></ul>
+  </div>
 </section>
 
 <!-- СПРАВА -->
@@ -857,6 +919,53 @@ body[data-det="0"] .det-only,body[data-det="0"] #pill,body[data-det="0"] #addW2,
     <div class="panel">
       <h2>Готовий текст</h2>
       <div class="copybox"><pre class="say" id="proto"></pre><button class="copy-ico" id="copyP" aria-label="Копіювати протокол" title="Копіювати"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button></div>
+      <div class="row" style="margin-top:10px"><button class="btn line" id="protoLog">У журнал зміни</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ЗМІНА -->
+<section class="view" id="v-shift" aria-label="Зміна">
+  <h1>Зміна</h1>
+  <p class="lead">Доповіді в рацію, допит і журнал за зміну.</p>
+  <div class="grid two">
+    <div class="grid">
+      <div class="panel">
+        <h2>Рація</h2>
+        <div class="fields two">
+          <div class="field"><label for="rCall">Позивний</label><input class="f" id="rCall" placeholder="Сокіл" autocomplete="off"></div>
+          <div class="field"><label for="rLoc">Де ви</label><input class="f" id="rLoc" placeholder="Вайнвуд, біля банку" autocomplete="off"></div>
+          <div class="field" id="rNBox"><label for="rN">Склад наряду</label><input class="f" id="rN" inputmode="numeric" value="2" autocomplete="off"></div>
+        </div>
+        <div class="rcodes" id="rCodes" role="group" aria-label="Код доповіді"></div>
+        <div class="copybox" style="margin-top:10px"><pre class="say" id="rOut"></pre><button class="copy-ico" id="rCopy" aria-label="Копіювати доповідь" title="Копіювати"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button></div>
+        <div class="c0" id="c0Box">
+          <div class="set"><label><span>Нагадувати Код 0<small>Планова доповідь кожні 15 хв. Пропуск — усне попередження</small></span><input type="checkbox" class="sw" id="c0On"></label></div>
+          <div class="c0row" id="c0Row"><b id="c0T">15:00</b><span class="small mute" id="c0S">до наступної доповіді</span><button class="btn sm" id="c0Done">Доповів</button></div>
+        </div>
+      </div>
+      <div class="panel" id="qP">
+        <div class="row between"><h2 style="margin:0">Допит</h2><b class="qclock" id="qClock">30:00</b></div>
+        <div class="seg qseg" id="qSeg" role="group" aria-label="Вид допиту"><button type="button" data-q="v">Вербальний</button><button type="button" data-q="f">Силовий</button></div>
+        <div id="qWarn"></div>
+        <ul class="wchk" id="qChk"></ul>
+        <div class="row" style="margin:6px 0 12px"><button class="btn line sm" id="qRules">Копіювати правила для допитуваного</button></div>
+        <form class="addrow" id="qForm">
+          <input class="f" id="qText" placeholder="Текст запитання" aria-label="Запитання" autocomplete="off">
+          <button class="btn" type="submit" id="qAdd">Копіювати №1</button>
+        </form>
+        <label class="qdet"><input type="checkbox" id="qDet"> <span>Через детектор брехні (/do, так чи ні) · <b id="qDetN">0</b> з 2</span></label>
+        <ol class="qlist" id="qList"></ol>
+        <p class="small mute" id="qNote"></p>
+        <div class="row" style="margin-top:10px"><button class="btn" id="qStart">Почати допит</button><button class="btn line" id="qEnd">Завершити і записати</button></div>
+      </div>
+    </div>
+    <div class="panel" id="logP">
+      <div class="row between"><h2 style="margin:0">Журнал зміни</h2><span class="small mute" id="shStart"></span></div>
+      <div class="lstats" id="lStats"></div>
+      <form class="addrow" id="noteForm"><input class="f" id="noteT" placeholder="Нотатка: виклик, штраф, подія" aria-label="Нотатка" autocomplete="off"><button class="btn" type="submit">Додати</button></form>
+      <ul class="log" id="logL"></ul>
+      <div class="row" style="margin-top:12px"><button class="btn" id="repCopy">Копіювати рапорт</button><button class="btn line" id="shNew">Нова зміна</button></div>
     </div>
   </div>
 </section>
@@ -866,6 +975,8 @@ body[data-det="0"] .det-only,body[data-det="0"] #pill,body[data-det="0"] #addW2,
   <h1>Довідка</h1>
   <p class="lead">Обшук, сила, особливі випадки, ордер, зброя і території.</p>
   <div id="orgRef" class="orgref" hidden></div>
+  <div class="panel tenp" id="tenP"><h2>Тен-коди</h2><div class="seg tenseg" id="tenSeg" role="group" aria-label="Тен-коди структури"></div><div id="tenNote" class="small mute"></div><div id="tenList"></div></div>
+  <div class="panel promop" id="promoP"><div class="row between"><h2 style="margin:0">Шлях до звання</h2><b class="small" id="promoN"></b></div><div id="promoBody"></div></div>
   <div class="grid two">
     <div class="grid">
       <div class="panel warnline">
@@ -1025,10 +1136,13 @@ body[data-det="0"] .det-only,body[data-det="0"] #pill,body[data-det="0"] #addW2,
     <h3>Клавіші (на комп'ютері)</h3>
     <div class="keys">
       <kbd>/</kbd><span>додати статтю</span>
-      <kbd>1–4</kbd><span>Зараз, Справа, Протокол, Довідка</span>
+      <kbd>1–5</kbd><span>Зараз, Справа, Протокол, Зміна, Довідка</span>
       <kbd>S</kbd><span>почати або продовжити відлік</span>
       <kbd>Esc</kbd><span>закрити вікно</span>
     </div>
+    <h3>Застосунок на телефоні</h3>
+    <p class="small mute" id="instHint"></p>
+    <button class="btn sm" id="instBtn" hidden style="margin-top:8px">Встановити MDT</button>
     <p class="small mute" style="margin-top:12px">Дані зберігаються лише в цьому браузері.</p>
   </div>
 </div>
@@ -1039,6 +1153,7 @@ body[data-det="0"] .det-only,body[data-det="0"] #pill,body[data-det="0"] #addW2,
     <button role="tab" data-v="v-case"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2"/></svg>Справа<span class="badge" id="badge">0</span></button>
     <button class="fab" id="fab" aria-label="Додати статтю"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i>Стаття</button>
     <button role="tab" data-v="v-proto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h10l4 4v12H5z"/><path d="M14 4v5h5M8 13h8M8 17h6"/></svg>Протокол</button>
+    <button role="tab" data-v="v-shift"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M10 6h4M12 18h.01M17 8h2M17 12h2"/></svg>Зміна</button>
     <button role="tab" data-v="v-ref"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 6v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M12 9v4M12 16h.01"/></svg>Довідка</button>
   </div>
 </nav>
@@ -1230,7 +1345,7 @@ document.addEventListener('keydown',e=>{
   if(typing||e.ctrlKey||e.metaKey||e.altKey)return;
   if(e.key==='/'){e.preventDefault();if(!openEl)openSheet();else $('q').focus();return}
   if(openEl)return;
-  const tabs={'1':'v-now','2':'v-case','3':'v-proto','4':'v-ref'};
+  const tabs={'1':'v-now','2':'v-case','3':'v-proto','4':'v-shift','5':'v-ref'};
   if(tabs[e.key]){show(tabs[e.key]);return}
   if(e.key==='s'||e.key==='S'||e.key==='і'||e.key==='І'){e.preventDefault();mainAction()}
 });
@@ -1269,6 +1384,28 @@ $('who').addEventListener('click',e=>{
 
 function addDet(){S.seq++;const d=newDet(S.seq);S.list.push(d);S.active=d.id;save();renderAll();show('v-now');toast(`Додано: ${d.label}`)}
 $('addW2').onclick=addDet;
+
+/* ---------- тен-коди ---------- */
+const TEN={
+ npu:{t:'НПУ',g:[['Тривога',[['Code 0','Негайна вогнева підтримка: поліцейський під прицільним обстрілом'],['Code 4','Ситуація під контролем, допомога не потрібна'],['Code Red','Критична ситуація чи збройний прорив: усім вільним екіпажам і КОРД терміново на місце']]],
+  ['10-коди',[['10-0','Повідомлення чи виклик відхилено, відміна дії'],['10-4','Прийнято, зрозумів'],['10-9','Нерозбірливо, повторіть'],['10-15','Затримано, конвоюю до відділку'],['10-20','Запит або повідомлення місцезнаходження'],['10-23','Прибув на місце виклику'],['10-34','Потрібна термінова допомога, запит додаткового патруля'],['10-90','Подія в банку, збройне пограбування банку']]],
+  ['Патрулювання',[['5-1','Виїхав у призначений сектор'],['5-2','Продовжую патрулювання, обстановка стабільна'],['5-3','Патрулювання завершено, повертаюсь до управління'],['5-7','Потрібна допомога на зупинці транспорту']]],
+  ['Перерва',[['4-1','Пішов на обідню перерву'],['4-2','Повернувся з перерви, готовий до служби']]]],
+  n:'При Code 0, Code Red і 10-90 в ефірі радіотиша — лише доповіді по суті.'},
+ ngu:{t:'НГУ',g:[['Коди тривоги',[['Код 0','Порядок у нормі. Доповідь кожні 15 хв'],['Код 1','Підозріла особа, транспорт чи предмет: перевірка документів'],['Код 2','Сутичка, опір вартовому, напад на пост — підкріплення наряду'],['Код 3','Збройний напад, активний стрілець — бойова активація «Омеги»'],['Код 4','Втеча затриманого чи переслідування порушника рубежу'],['Код 5','Збройний напад на колону, патруль чи КПП — запит НПУ і СБУ'],['Код 6','Цивільний без перепустки на території Форт-Занкудо (ст. 162 КК)'],['Код 7','Порушення повітряного простору над Форт-Занкудо']]]],
+  n:'Скасувати код може той, хто оголосив, або офіцер штабу від Капітана. Після — перехід на Код 0.'},
+ dvk:{t:'ДВК',g:[['Коди тривоги',[['Код 0','Порядок у нормі. Доповідь кожні 15 хв'],['Код 1','Контрабанда: ізолювати, викликати інспектора ВРП'],['Код 2','Бійка в блоці — підкріплення СБ, вогнепальна по беззбройних заборонена'],['Код 3','Бунт чи заручники — активація ГОРС, повний локдаун'],['Код 4','Втеча засудженого — блокування КПП, виїзд ОПК, перерахунок'],['Код 5','Напад на конвой чи автозак — загальна хвиля, запит НПУ і СБУ']]]],
+  n:'При кодах 1–5 радіотиша. Скасовує той, хто оголосив, або черговий від Капітана внутрішньої служби.'}
+};
+let tenSel=null;
+function drawTen(){
+  const org=(S.agent&&S.agent.org)||'sbu',k=tenSel||(TEN[org]?org:'npu'),d=TEN[k];
+  $('tenSeg').innerHTML=Object.entries(TEN).map(([x,v])=>`<button type="button" data-ten="${x}" aria-pressed="${x===k}">${v.t}</button>`).join('');
+  const own=TEN[org]?'':`<p>Окремих тен-кодів для ${ORG().short} у законодавстві NG немає.</p>`;
+  $('tenNote').innerHTML=own+`<p>${d.n}</p>`;
+  $('tenList').innerHTML=d.g.map(([h,rows])=>`<h3 class="tenh">${h}</h3><dl class="kv ten">${rows.map(([c,t])=>`<dt>${c}</dt><dd>${t}</dd>`).join('')}</dl>`).join('');
+}
+$('tenSeg').addEventListener('click',e=>{const b=e.target.closest('[data-ten]');if(b){tenSel=b.dataset.ten;drawTen()}});
 /* ---------- профіль агента ---------- */
 /* ---------- структури ---------- */
 const P=(h,b,c)=>`<div class="panel${c?' '+c:''}"><h2>${h}</h2>${b}</div>`;
@@ -1377,7 +1514,7 @@ $('agentForm').addEventListener('submit',e=>{
   if(!a.badge)err.push('номер жетона');
   if(a.mask?!a.call:!a.name)err.push(a.mask?'позивний':"ім'я та прізвище");
   if(err.length){$('aErr').textContent='Заповніть: '+err.join(', ')+'.';$('aErr').hidden=false;return}
-  S.agent=a;S.agentAsked=true;save();closePanel();applyOrg();drawAgent();toast('Профіль збережено');
+  S.agent=a;S.agentAsked=true;save();closePanel();applyOrg();tenSel=null;drawTen();drawAgent();toast('Профіль збережено');
 });
 $('aLater').onclick=()=>{S.agentAsked=true;save();closePanel()};
 $('aCopy').onclick=()=>copy($('aPreview').textContent,$('aCopy'));
@@ -1410,10 +1547,10 @@ $('next').addEventListener('click',e=>{
   if(e.target.id==='mirCopy'){const t=document.createElement('div');t.innerHTML=mirandaHTML();copy(t.textContent).then(ok=>{if(ok)toast('Міранду скопійовано')})}
   if(e.target.id==='stepsAgain'){D().steps=Array(8).fill(false);save();drawSteps();toast('Кроки скинуто')}
   if(e.target.id==='newCase'){
-    const d=D(),snap=JSON.stringify(d);
+    const d=D(),snap=JSON.stringify(d),logged=logDet(d);
     Object.assign(d,{steps:Array(8).fill(false),case:[],timer:{start:null,used:0,pAt:null,pMax:0,pL:''},seized:[],sStart:null,sDone:false,proto:{name:'',place:'',desc:'',note:'',out:'Поміщено до КПЗ'}});
     save();renderAll();window.scrollTo(0,0);
-    toast('Почато нове затримання','Повернути',()=>{Object.assign(d,JSON.parse(snap));save();renderAll()});
+    toast(logged?'Записано в журнал, почато нове затримання':'Почато нове затримання','Повернути',()=>{Object.assign(d,JSON.parse(snap));if(logged){S.shift.log.shift()}save();renderAll()});
   }
   const ic=e.target.closest('#introCopy');if(ic)copy($('introTxt').textContent,ic);
 });
@@ -1642,7 +1779,7 @@ function tick(){
   });
   document.querySelectorAll('#who [data-id]').forEach(b=>{const x=S.list.find(q=>q.id===b.dataset.id);if(!x)return;const w=tview(x,now);b.dataset.s=w.st;b.querySelector('span').textContent=w.st==='idle'?'':fmt(w.left)});
   if(d.sStart&&!d.sDone&&d.seized.length)drawDeadline();
-  drawAlerts();
+  drawAlerts();tickC0(now);tickQ(now);drawPip();
 }
 
 /* ---------- ордер ---------- */
@@ -1655,10 +1792,233 @@ function drawW(){
 wb.forEach((b,i)=>b.addEventListener('change',()=>{S.warrant[i]=b.checked;save();drawW()}));
 $('clearW').onclick=()=>{S.warrant=Array(6).fill(false);save();drawW()};
 
+
+/* ---------- рація ---------- */
+const SAY={
+ npu:{'Code 0':'Code 0! Під обстрілом, {loc}! Потрібна вогнева підтримка!','Code 4':'Code 4, ситуація під контролем, допомога не потрібна.','Code Red':'Code Red! {loc}! Усім вільним екіпажам і КОРД терміново на місце!',
+  '10-0':'10-0, відміна.','10-4':'10-4, прийняв.','10-9':'10-9, повторіть.','10-15':'10-15, {det}, конвоюю до відділку.','10-20':'10-20: {loc}.','10-23':'10-23, прибув на місце: {loc}.','10-34':'10-34! Потрібна допомога, {loc}!','10-90':'10-90! Пограбування банку, {loc}!',
+  '5-1':'5-1, виїжджаю в сектор: {loc}.','5-2':'5-2, патрулюю {loc}, обстановка стабільна.','5-3':'5-3, патрулювання завершено, повертаюсь до управління.','5-7':'5-7! Потрібна допомога на зупинці транспорту, {loc}!','4-1':'4-1, пішов на перерву.','4-2':'4-2, повернувся з перерви, готовий до служби.'},
+ ngu:{'Код 0':'Пост: {loc}. Склад наряду: {n}. Стан рубежу: Код 0. Доповідь закінчив.','Код 1':'Оголошено Код 1, {loc}. Виявлено підозрілу особу чи транспорт. Потрібна перевірка документів.','Код 2':'Оголошено Код 2! Фізичний напад, {loc}! Потрібне термінове підкріплення наряду!','Код 3':'Оголошено Код 3! Збройний напад, {loc}! Активація «Омеги»!','Код 4':'Оголошено Код 4! Переслідування порушника, {loc}. Ведемо перехоплення!','Код 5':'Оголошено Код 5! Збройний напад на колону чи КПП, {loc}! Запитуємо негайну підтримку силовиків!','Код 6':'Оголошено Код 6! Стороння особа без перепустки, {loc}. Здійснюємо затримання!','Код 7':'Оголошено Код 7! Невідомий повітряний об\'єкт, {loc}. Очікуємо наказів!'},
+ dvk:{'Код 0':'Пост: {loc}. Склад наряду: {n}. Стан: Код 0. Доповідь закінчив.','Код 1':'Оголошено Код 1, {loc}! Виявлено заборонені предмети. Потрібен інспектор ВРП!','Код 2':'Оголошено Код 2! Бійка, {loc}! Потрібне термінове підкріплення наряду!','Код 3':'Оголошено Код 3 по всій установі! {loc}. Активація ГОРС!','Код 4':'Оголошено Код 4! Втеча засудженого, {loc}. Розпочинаємо переслідування!','Код 5':'Оголошено Код 5! Збройний напад на конвой, {loc}! Потрібна термінова силова підтримка!'}
+};
+const codeSet=()=>{const o=(S.agent&&S.agent.org)||'sbu';return TEN[o]?o:'npu'};
+let rSel=null;
+function myCall(){return (S.radio&&S.radio.call)||(S.agent&&(S.agent.call||S.agent.name))||''}
+function radioText(){
+  const set=codeSet(),c=rSel;if(!c)return '';
+  const t=(SAY[set][c]||c).replace('{loc}',($('rLoc').value.trim()||'[де ви]')).replace('{n}',$('rN').value.trim()||'2').replace('{det}',nameOf(D()));
+  const call=$('rCall').value.trim();return (call?`[${call}] `:'')+t;
+}
+function drawRadio(){
+  S.radio=S.radio||{call:'',loc:'',n:'2'};S.c0=S.c0||{on:null,at:null};
+  if(document.activeElement!==$('rCall'))$('rCall').value=myCall();
+  if(document.activeElement!==$('rLoc'))$('rLoc').value=S.radio.loc||'';
+  const set=codeSet(),codes=TEN[set].g.flatMap(g=>g[1]);
+  if(rSel&&!codes.some(r=>r[0]===rSel))rSel=null;
+  $('rCodes').innerHTML=TEN[set].g.map(([h,rows])=>`<div class="rg"><span>${h}</span><div>${rows.map(([c,d])=>`<button type="button" data-rc="${c}" title="${esc(d)}" aria-pressed="${c===rSel}">${c}</button>`).join('')}</div></div>`).join('');
+  $('rNBox').hidden=set==='npu';
+  const tx=radioText();$('rOut').textContent=tx||'Оберіть код — доповідь складеться сама.';$('rOut').classList.toggle('mute',!tx);$('rCopy').hidden=!tx;
+  const c0=set!=='npu';$('c0Box').hidden=!c0;
+  if(c0){if(S.c0.on===null)S.c0.on=true;$('c0On').checked=!!S.c0.on;$('c0Row').hidden=!S.c0.on}
+}
+$('rCodes').addEventListener('click',e=>{const b=e.target.closest('[data-rc]');if(!b)return;rSel=b.dataset.rc;drawRadio();
+  const tx=radioText();copy(tx,$('rCopy')).then(ok=>{if(ok){toast('Доповідь скопійовано');logAdd('radio',tx);if(/Код 0/.test(rSel)){S.c0.at=Date.now();save()}}})});
+['rCall','rLoc','rN'].forEach(id=>$(id).addEventListener('input',()=>{S.radio.call=$('rCall').value.trim();S.radio.loc=$('rLoc').value;S.radio.n=$('rN').value;save();
+  const tx=radioText();if(tx)$('rOut').textContent=tx}));
+$('rCopy').onclick=()=>{const tx=radioText();copy(tx,$('rCopy')).then(ok=>{if(ok){logAdd('radio',tx);if(/Код 0/.test(rSel||'')){S.c0.at=Date.now();save()}}})};
+$('c0On').addEventListener('change',()=>{S.c0.on=$('c0On').checked;if(S.c0.on&&!S.c0.at)S.c0.at=Date.now();save();drawRadio()});
+function c0Text(){const call=$('rCall').value.trim();return (call?`[${call}] `:'')+SAY[codeSet()]['Код 0'].replace('{loc}',$('rLoc').value.trim()||'[пост]').replace('{n}',$('rN').value.trim()||'2')}
+$('c0Done').onclick=()=>{const tx=c0Text();copy(tx).then(ok=>{S.c0.at=Date.now();save();if(ok){toast('Код 0 скопійовано');logAdd('radio',tx)}})};
+const C0=15*60000;
+function tickC0(now){
+  if($('c0Box').hidden||!S.c0||!S.c0.on)return;
+  if(!S.c0.at){S.c0.at=now;save()}
+  const l=S.c0.at+C0-now;$('c0T').textContent=fmt(Math.max(0,l));$('c0Row').dataset.s=l<=0?'over':l<=60000?'warn':'ok';
+  $('c0S').textContent=l<=0?'час доповісти Код 0':'до наступної доповіді';
+  if(l<=60000&&l>0)signal('c0w:'+S.c0.at,'soft','1 хв до доповіді Код 0');
+  if(l<=0&&!fired.has('c0e:'+S.c0.at)){fired.add('c0e:'+S.c0.at);beep('end');toast('Час доповісти Код 0','Копіювати',()=>$('c0Done').click())}
+}
+
+/* ---------- допит ---------- */
+const COPY_I='<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>';
+const QRULES='Правила допиту. Ви зобов\'язані відігравати RP до кінця допиту. Якщо ми порушимо правила допитів, ви маєте право відмовитися від RP — для цього потрібен відкат зі звуком, якість від 480p. Буде поставлено 10 запитань. Відповідайте чітко і по суті, без навмисного ухилення та затягування.';
+const QRULES_F=' На 3 запитання на наш вибір ви зобов\'язані відповісти правдиво — голосом або в чат і в /do.';
+function forceOK(){const a=S.agent||{};return (a.org||'sbu')==='sbu'&&['ОРВ','АТЦ','ЦСО «А»'].includes(a.unit)}
+function qS(){S.q=S.q||{type:'v',start:null,qs:[],det:0,chk:[]};if(S.q.type==='f'&&!forceOK())S.q.type='v';return S.q}
+function qChecks(t){return t==='f'?['Щонайменше 2 співробітники ОРВ, АТЦ чи ЦСО «А» (п. 3.3)','Безлюдне місце або закинуте приміщення (п. 3.2)','Є IC-підстава, не помста (п. 1.3, 1.6)','Зачитано правила поведінки допитуваного (п. 1.12)']
+  :['Щонайменше 2 співробітники держструктур; адвокат і прокурор не рахуються (п. 2.3)','Допитна кімната, без образ і насильства (п. 1.2, 2.2)','Є IC-підстава, не помста (п. 1.3, 1.6)','Зачитано правила поведінки допитуваного (п. 1.12)']}
+function drawQ(){
+  const q=qS(),lim=q.type==='f'?40:30,org=(S.agent&&S.agent.org)||'sbu';
+  $('qSeg').querySelectorAll('button').forEach(b=>{b.setAttribute('aria-pressed',b.dataset.q===q.type);if(b.dataset.q==='f')b.disabled=!forceOK()});
+  let w='';
+  if(org==='ngu'||org==='dvk')w=`<div class="alert mid" style="margin:10px 0"><div>Вербальний допит НГУ і ДВК не проводять (п. 2.1 Правил допитів).</div></div>`;
+  else if(!forceOK())w=`<p class="small mute" style="margin:8px 0 0">Силовий допит — лише ОРВ, АТЦ СБУ і ЦСО «А» за наказом керівника (п. 3.1).</p>`;
+  $('qWarn').innerHTML=w;
+  const ch=qChecks(q.type);$('qChk').innerHTML=ch.map((t,i)=>`<li><label><input type="checkbox" data-qc="${i}" ${q.chk[i]?'checked':''}> <span>${t}</span></label></li>`).join('');
+  const n=q.qs.length;$('qAdd').innerHTML=n>=10?'10 з 10':`${COPY_I} №${n+1}`;$('qAdd').setAttribute('aria-label',n>=10?'Ліміт запитань':`Копіювати запитання №${n+1}`);$('qAdd').disabled=n>=10;$('qText').disabled=n>=10;
+  $('qDetN').textContent=q.det;$('qDet').disabled=q.det>=2;if(q.det>=2)$('qDet').checked=false;
+  $('qList').innerHTML=q.qs.map((x,i)=>`<li><b>№${i+1}</b>${x.d?' <span class="tag">детектор</span>':''} ${esc(x.t)}</li>`).join('');
+  $('qNote').innerHTML=(q.type==='f'?'Без больового шоку і втрати свідомості. Після — завербувати або відіграти препарат для втрати пам\'яті; ліквідовувати заборонено (п. 3.7–3.8). ':'')+'Не перефразовуйте те саме запитання (п. 1.9). Втратив свідомість — допит завершено, передати ЕМД (п. 1.10).';
+  $('qStart').hidden=!!q.start;$('qEnd').hidden=!q.start&&!n;
+  $('qClock').dataset.lim=lim;tickQ(Date.now());
+}
+function tickQ(now){const q=S.q;if(!q)return;const lim=(q.type==='f'?40:30)*60000,l=q.start?q.start+lim-now:lim;
+  $('qClock').textContent=fmt(Math.max(0,l));$('qClock').dataset.s=!q.start?'idle':l<=0?'over':l<=300000?'warn':'run';
+  if(q.start){if(l<=300000&&l>240000)signal('q5:'+q.start,'warn','5 хв до кінця допиту');if(l<=0&&l>-60000)signal('q0:'+q.start,'end','Час допиту вичерпано')}}
+$('qSeg').addEventListener('click',e=>{const b=e.target.closest('[data-q]');if(!b||b.disabled)return;const q=qS();if(q.start&&q.type!==b.dataset.q){toast('Спочатку завершіть поточний допит');return}q.type=b.dataset.q;q.chk=[];save();drawQ()});
+$('qChk').addEventListener('change',e=>{const i=e.target.dataset.qc;if(i==null)return;qS().chk[i]=e.target.checked;save()});
+$('qRules').onclick=()=>{const t=QRULES+(qS().type==='f'?QRULES_F:'');copy(t).then(ok=>{if(ok){toast('Правила скопійовано');const q=qS();q.chk[3]=true;save();drawQ()}})};
+$('qStart').onclick=()=>{const q=qS();q.start=Date.now();save();drawQ();toast(`Допит почато · ліміт ${q.type==='f'?40:30} хв`)};
+$('qForm').addEventListener('submit',e=>{e.preventDefault();const q=qS(),t=$('qText').value.trim();if(!t||q.qs.length>=10)return;
+  const d=$('qDet').checked&&q.det<2,line=d?`/do ${t}`:`Запитання №${q.qs.length+1}: ${t}`;
+  copy(line).then(ok=>{q.qs.push({t,d});if(d)q.det++;if(!q.start)q.start=Date.now();$('qText').value='';$('qDet').checked=false;save();drawQ();if(ok)toast(`Запитання №${q.qs.length} скопійовано`)})});
+$('qEnd').onclick=()=>{const q=qS(),snap=JSON.stringify(q),min=q.start?Math.max(1,Math.round((Date.now()-q.start)/60000)):0;
+  logAdd('q',`${q.type==='f'?'Силовий':'Вербальний'} допит: ${nameOf(D())}, ${q.qs.length} запитань${q.det?`, детектор ${q.det}`:''}${min?`, ${min} хв`:''}`);
+  S.q={type:q.type,start:null,qs:[],det:0,chk:[]};save();drawQ();toast('Допит записано в журнал','Повернути',()=>{S.q=JSON.parse(snap);S.shift.log.shift();save();drawQ();drawLog()})};
+
+/* ---------- журнал зміни ---------- */
+const hm=t=>new Date(t).toLocaleTimeString('uk-UA',{hour:'2-digit',minute:'2-digit'});
+const dmy=t=>new Date(t).toLocaleDateString('uk-UA');
+function shift(){if(!S.shift)S.shift={start:Date.now(),log:[]};return S.shift}
+function logAdd(k,txt){const s=shift();s.log.unshift({t:Date.now(),k,txt});if(s.log.length>300)s.log.length=300;save();drawLog()}
+function detSummary(d){
+  const arts=d.case.map(k=>ALL[k]?`${codeName(ALL[k])} ${ALL[k].num}`:'').filter(Boolean).join(', ');
+  const sz=d.seized.map(x=>x.q?`${x.t} (${x.q})`:x.t).join(', ');
+  return [nameOf(d),arts||'статті не вказано',d.proto.out,sz?'вилучено: '+sz:'',d.proto.place].filter(Boolean).join(' · ');
+}
+function logDet(d){if(!d.case.length&&!d.proto.name&&!d.seized.length)return false;logAdd('det',detSummary(d));return true}
+const LK={det:'Затримання',radio:'Ефір',q:'Допит',note:'Нотатка'};
+function drawLog(){
+  const s=shift(),c=k=>s.log.filter(x=>x.k===k).length;
+  $('shStart').textContent=`з ${hm(s.start)}, ${dmy(s.start)}`;
+  $('lStats').innerHTML=[['det','Затримань'],['q','Допитів'],['radio','Доповідей']].map(([k,l])=>`<div><b>${c(k)}</b><span>${l}</span></div>`).join('');
+  $('logL').innerHTML=s.log.length?s.log.map((x,i)=>`<li data-k="${x.k}"><time>${hm(x.t)}</time><div><small>${LK[x.k]}</small>${esc(x.txt)}</div><button data-li="${i}" aria-label="Видалити запис">✕</button></li>`).join('')
+    :'<li class="empty">Записів ще немає. Затримання потрапляють сюди, коли ви натискаєте «Нове затримання» або «У журнал» у протоколі.</li>';
+}
+$('logL').addEventListener('click',e=>{const b=e.target.closest('[data-li]');if(!b)return;const s=shift(),i=+b.dataset.li,x=s.log[i];s.log.splice(i,1);save();drawLog();toast('Запис видалено','Повернути',()=>{s.log.splice(i,0,x);save();drawLog()})});
+$('noteForm').addEventListener('submit',e=>{e.preventDefault();const t=$('noteT').value.trim();if(!t)return;logAdd('note',t);$('noteT').value=''});
+function report(){
+  const s=shift(),by=k=>s.log.filter(x=>x.k===k).slice().reverse(),L=[];
+  L.push('РАПОРТ ЗА ЗМІНУ');L.push(`Співробітник: ${officerLine()||'—'}, ${ORG().full}`);
+  L.push(`Зміна: ${dmy(s.start)} ${hm(s.start)} – ${hm(Date.now())}`);
+  L.push(`Затримань: ${by('det').length} · Допитів: ${by('q').length} · Доповідей в ефір: ${by('radio').length}`);
+  [['det','Затримання'],['q','Допити'],['note','Інше']].forEach(([k,h])=>{const a=by(k);if(a.length){L.push('');L.push(h+':');a.forEach((x,i)=>L.push(`${i+1}. ${hm(x.t)} — ${x.txt}`))}});
+  return L.join('\n');
+}
+$('repCopy').onclick=()=>copy(report(),$('repCopy')).then(ok=>{if(ok)toast('Рапорт скопійовано')});
+$('shNew').onclick=()=>{const old=S.shift;S.shift={start:Date.now(),log:[]};save();drawLog();toast('Почато нову зміну','Повернути',()=>{S.shift=old;save();drawLog()})};
+
+/* ---------- шлях до звання ---------- */
+const PROMO={"npu": [{"t": "Кадета поліції ➔ Рядового поліції", "r": ["мінімальний строк: відразу після офіційного зарахування на службу", "підключитися до закритої системи оперативного зв'язку НПУ та внести персональні дані до електронного реєстру особового складу", "вивчити структуру НПУ, підрозділи та правила службової субординації", "успішно скласти вступний теоретичний залік інструкторові на знання Внутрішнього Статуту НПУ"]}, {"t": "Рядового поліції ➔ Капрала поліції", "r": ["мінімальний строк вислуги: не менше 24 годин на посаді", "успішно скласти іспит інструкторові на знання службових кодів та правил ведення радіообміну", "успішно скласти кваліфікаційний залік на знання Процесуального кодексу штату NG", "прослухати 1 навчальну лекцію від офіцера у званні не нижче Лейтенанта поліції щодо правил поводження із затриманими", "здійснити спільний ознайомчий виїзд у патруль з офіцером у званні не нижче Лейтенанта поліції"]}, {"t": "Капрала поліції ➔ Сержанта поліції", "r": ["мінімальний строк вислуги: не менше 48 годин на посаді", "скласти практичний залік із тактики затримання особи згідно з Процесуальним кодексом штату NG (висування вимоги, кайданки, зачитування прав Міранди, поверхневий огляд)", "успішно скласти іспит на знання Закону «Про Національну поліцію України»", "здійснити правомірне затримання 1 правопорушника під безпосереднім наглядом офіцера у званні не нижче Лейтенанта поліції", "урочисто скласти Присягу поліцейського України"]}, {"t": "Сержанта поліції ➔ Старшого сержанта поліції", "r": ["мінімальний строк вислуги: не менше 3 днів (72 години несення служби на зміні)", "пред'явити дійсний військовий квиток керівництву підрозділу / інструкторам", "здійснити правомірне затримання 3 правопорушників", "виписати 10 адміністративних штрафів за порушення КУпАП чи ПДР", "взяти участь в 1 масовому заході публічної безпеки або тактичному тренуванні"]}, {"t": "Старшого сержанта поліції ➔ Молодшого лейтенанта поліції", "r": ["мінімальний строк вислуги: не менше 3 днів (72 години несення служби на зміні)", "здійснити правомірне затримання 6 правопорушників", "виписати 15 адміністративних штрафів", "взяти участь у 2 масових заходах забезпечення публічної безпеки або спільних навчаннях"]}, {"t": "Молодшого лейтенанта поліції ➔ Лейтенанта поліції", "r": ["мінімальний строк вислуги: не менше 3 днів на посаді", "здійснити правомірне затримання 12 правопорушників", "виписати 20 адміністративних штрафів", "взяти участь у 3 заходах забезпечення публічної безпеки або тренуваннях"]}, {"t": "Лейтенанта поліції ➔ Старшого лейтенанта поліції", "r": ["мінімальний строк вислуги: не менше 3 днів на посаді", "здійснити правомірне затримання 20 правопорушників", "виписати 30 адміністративних штрафів", "взяти участь у 5 заходах забезпечення правопорядку або тренуваннях"]}, {"t": "Старшого лейтенанта поліції ➔ Капітана поліції", "r": ["мінімальний строк вислуги: не менше 5 днів на посаді", "проведення 5 навчальних інструктажів для молодшого складу", "здійснити особисте затримання 25 правопорушників", "виписати 40 адміністративних штрафів", "взяти участь у 8 заходах забезпечення безпеки або спеціальних операціях"]}, {"t": "Капітана поліції ➔ Майора поліції", "r": ["мінімальний строк вислуги: не менше 5 днів на посаді", "бездоганні показники оперативно-службової діяльності у своєму підрозділі", "здійснити особисте затримання 40 правопорушників", "виписати 60 адміністративних штрафів", "взяти участь у 13 заходах безпеки, рейдах або спільних операціях"]}, {"t": "Майора поліції ➔ Підполковника поліції", "r": ["мінімальний строк вислуги: не менше 7 днів на посаді", "виключно за офіційним поданням Полковника поліції", "кандидат повинен проявляти лідерські якості, бути здатним замістити начальника підрозділу під час його відсутності", "повна відсутність дисциплінарних доган протягом останнього місяця служби"]}, {"t": "Підполковника поліції ➔ Полковника поліції", "r": ["мінімальний строк вислуги: від 14 до 21 дня у званні Підполковника", "присвоюється персональним наказом Генерала Національної поліції України за бездоганну службу"]}, {"t": "Полковника поліції ➔ Начальника сектора поліції", "r": ["призначається наказом Генерала Національної поліції України за обов'язковим письмовим погодженням Міністерства внутрішніх справ штату NG"]}, {"t": "Начальника сектора поліції ➔ Першого заступника Генерала поліції", "r": ["призначається розпорядженням Прем'єр-міністра штату NG за офіційним поданням Голови Національної поліції України та погодженням Міністерства внутрішніх справ штату NG"]}], "dvk": [{"t": "Стажера внутрішньої служби ➔ Курсанта академії", "r": ["мінімальний строк: 1 місяць служби", "підключитися до захищеного відомчого каналу зв'язку та внести персональні дані до реєстру співробітників установи.  (( отримати роль у Discord ДВК та налаштувати нікнейм за формою: [ДВК] Ім'я Прізвище ))", "ознайомитися з режимною територією, розташуванням постів та зонами обмеженого доступу колонії", "вивчити структуру ДВК та правила службової субординації", "успішно скласти вступний теоретичний залік інструкторові Навчального відділу на знання Внутрішнього Статуту ДВК"]}, {"t": "Курсанта академії ➔ Старшого курсанта", "r": ["мінімальний строк вислуги: 1 місяць служби", "успішно скласти іспит інструкторові на знання Службових кодів (0–5) та правил ведення радіообміну", "несення вартової служби на навчальному пості «КПП-1» сумарно 120 хвилин (( фіксація доповідей у рацію кожні 15 хвилин зі скріншотами з чатом та HUD ))", "прослухати 1 навчальну лекцію від офіцера у званні не нижче Лейтенанта внутрішньої служби на тему «Правила поводження із засудженими та режимні заборони»"]}, {"t": "Старшого курсанта ➔ Молодшого сержанта внутрішньої служби", "r": ["мінімальний строк вислуги: 2 місяці служби", "скласти практичний залік із тактики застосування спеціальних засобів: кайданки, гумовий кийок та електрошокер (тайзер) (( демонстрація чітких відігровок через команди /me, /do, /todo інструкторові ))", "успішно скласти іспит на знання Закону штату NG «Про Державну виправну колонію»", "практика конвоювання: успішно провести засудженого з камерного блоку до прогулянкового двору під особистим наглядом інструктора (( скріншоти початку конвоювання, супроводу та повернення ))", "урочисто скласти Присягу співробітника Державної виправної колонії"]}, {"t": "Молодшого сержанта внутрішньої служби ➔ Сержанта внутрішньої служби", "r": ["мінімальний строк вислуги: 3 місяці служби", "охорона стаціонарного посту «Камерний корпус» або «Прогулянковий двір» сумарно 150 хвилин (( доповіді у рацію кожні 15 хвилин зі скріншотами з чатом та HUD ))", "провести 5 поверхневих оглядів засуджених (( відігровки обшуку через /me, /do з обов'язковою перевіркою кишень та взуття ))", "зафіксувати порушення режиму та передати черговому офіцеру або помістити до карцеру (ДІЗО) 1 порушника за Кодом 1 чи Кодом 2 з наявністю доказів", "скласти практичний залік із вогневої підготовки на полігоні: стрільба з табельного пістолета (Fort-12/Glock) та пістолета-кулемета (Micro SMG)"]}, {"t": "Сержанта внутрішньої служби ➔ Старшого сержанта внутрішньої служби", "r": ["мінімальний строк вислуги: 3 місяці служби", "патрулювання внутрішньої території колонії сумарно 150 хвилин (( доповіді у рацію кожні 15 хвилин ))", "взяти участь у 2 планових режимних обшуках камерного корпусу у складі групи від 3 співробітників (( скріншоти шикування, процесу перевірки меблів через /me, /do та завершення заходу ))", "надати практичну допомогу офіцерам ОПК у прийомі 3 нових засуджених від конвою поліції чи служби безпеки (реєстрація в базі, обшук, видача тюремного одягу)", "успішно скласти кваліфікаційний тест на знання статті 5 Закону про ДВК: «Випадки та межі застосування вогнепальної зброї»"]}, {"t": "Старшого сержанта внутрішньої служби ➔ Старшини внутрішньої служби", "r": ["мінімальний строк вислуги: 3 місяці служби", "охорона зовнішніх постів «Спостережна вишка» або «Периметр» сумарно 200 хвилин (доповіді у рацію кожні 15 хвилин)", "особисто виявити та вилучити через системний функціонал 2 одиниці контрабанди (відмички, заточки, наркотичні речовини, телефони) з доказами", "успішне оперативне реагування на Код 2 (бійка): припинити фізичне протистояння, розборонити та заспокоїти в'язнів з доказами", "пройти спеціальне навчання щодо тактики використання автоматичної зброї Micro SMG в умовах обмеженого простору коридорів"]}, {"t": "Старшини внутрішньої служби ➔ Молодшого лейтенанта внутрішньої служби", "r": ["мінімальний строк вислуги: 3 місяці служби", "провести 10 повних особистих обшуків засуджених (( фіксація системного вилучення з відігровками ))", "прочитати 2 вступні навчальні лекції для новоприйнятих Стажерів або Курсантів (( скріншоти початку, змісту лекції та завершення ))", "виконати 3 індивідуальні службові доручення від керівництва частини (Начальника ДВК або Полковника)", "комплексна переатестація: повторне складання іспитів (Статут установи, Закон про ДВК, стадії застосування сили, службові Коди 0–5) офіцеру у званні не нижче Лейтенанта внутрішньої служби для отримання першого офіцерського звання"]}, {"t": "Молодшого лейтенанта внутрішньої служби ➔ Лейтенанта внутрішньої служби", "r": ["мінімальний строк вислуги: 5 місяців служби", "остаточне визначення зі спеціалізацією та офіційне зарахування наказом до підрозділу: СБ, ГОРС, ОПК або ВРП", "скласти норматив інструкторові з володіння важким озброєнням: автомат АК-74 та бойовий дробовик", "організувати та успішно завершити 3 виїзди у складі конвою (етапування затриманих на спецавтомобілі з ІТТ поліції до ДВК) (( обов'язковий склад наряду не менше 3 озброєних бійців у бронежилетах; скріншоти виїзду, прийому особи в поліції та доставки до ДВК ))", "взяти безпосередню участь у придушенні масового бунту засуджених (Код 3) або успішно відпрацювати план оперативного перехоплення втікача за Кодом 4 (( скріншоти або відеозапис участі ))"]}, {"t": "Лейтенанта внутрішньої служби ➔ Старшого лейтенанта внутрішньої служби", "r": ["мінімальний строк вислуги: 5 місяців служби", "особисто очолити групу обшуку блоку (у складі не менше 3 підлеглих) та виявити заборонені предмети (( скріншоти шикування групи, проведення перевірки та рапорту ))", "провести 5 навчальних інструктажів для особового складу молодшої ланки", "провести 3 практичні тренування з тактичної стрільби чи штурмових дій для співробітників свого відділу (( скріншоти початку, навчального процесу та закінчення ))", "виявити та задокументувати 1 факт грубого дисциплінарного проступку або корупції серед персоналу чи засуджених (скласти та передати офіційний рапорт до ВРП)"]}, {"t": "Старшого лейтенанта внутрішньої служби ➔ Капітана внутрішньої служби", "r": ["мінімальний строк вислуги: 7 місяців служби", "відпрацювати 5 змін на посаді Чергового помічника начальника частини (координація всіх вартових постів тюрми через рацію та контроль дотримання Коду 0)", "скласти залік інструкторові на право закріплення снайперської гвинтівки на постах «Спостережна вишка» та «Дах»", "організувати та провести 1 спільне тренування з іншою силовою структурою (НПУ або СБУ)", "скласти план посилення режиму охорони установи під час візиту офіційної перевірки Міністерства юстиції чи Офісу Генерального прокурора"]}, {"t": "Капітана внутрішньої служби ➔ Майора внутрішньої служби", "r": ["мінімальний строк вислуги: 10 місяців служби", "наявність вільної штатної посади начальника підрозділу за квотою та особисте подання Начальника ДВК", "прийняти 10 кваліфікаційних іспитів у співробітників Навчального корпусу (Стажерів / Курсантів)", "провести 10 службових перевірок особового складу (наявність службових посвідчень, стан зброї, працездатність боді-камер)", "отримати офіційну позитивну службову характеристику від Начальника ДВК (Генерал-майора внутрішньої служби)"]}, {"t": "Майор внутрішньої служби ➔ Підполковник внутрішньої служби / Полковник внутрішньої служби", "r": ["для призначення на звання Підполковника внутрішньої служби - вислуга не менше 14 місяців служби на званні Майора", "для призначення на звання Полковника внутрішньої служби - додатково не менше 7 місяців служби на званні Підполковника", "Призначення здійснюється виключно за індивідуальним кадровим наказом Начальника ДВК (( за обов'язковим попереднім погодженням із куратором фракції ))", "Кандидат повинен проявити бездоганні лідерські якості, знати все законодавство штату NG та бути здатним замістити Начальника установи у разі його відсутності", "Бездоганна службова репутація: відсутність активних дисциплінарних доган (( та повна відсутність покарань від адміністрації сервера (Warn / Деморган) )) за останній місяць"]}], "dbr": [{"t": "Стажер ➔ Агент", "r": ["успішне складання заліків зі знання субординації, внутрішнього статуту, Закону про ДБР та кодексів (КК, КУпАП, КПК)", "схвалення кандидатури інструктором або куратором стажування", "відсутність дисциплінарних зауважень"]}, {"t": "Агент ➔ Старший агент", "r": ["мінімальний строк: вислуга на посаді не менше 3 місяців (( 3 дні / 72 години ))", "участь у двох службових перевірках або розслідуваннях", "складання практичного заліку зі спецзасобів", "повна відсутність дисциплінарних стягнень", "індивідуальне погодження та мотивоване схвалення керівника підрозділу"]}, {"t": "Старший агент ➔ Слідчий в особливо важливих справах", "r": ["мінімальний строк: вислуга на посаді не менше 5 місяців (( 5 днів / 120 годин ))", "наявність вільної посади слідчого у штатному розписі бюро", "успішне завершення та передача до суду або прокуратури щонайменше одного кримінального кейс-файлу щодо посадових злочинів", "участь у проведенні двох процесуальних допитів", "позитивна службова характеристика та виключне персональне схвалення Директора ДБР"]}, {"t": "Слідчий в особливо важливих справах ➔ Начальник слідчого управління / Перший заступник Директора ДБР", "r": ["призначення здійснюється за виключним індивідуальним наказом Директора ДБР на підставі особистої довіри, стратегічних потреб бюро та погодження куратора"]}]};
+const PROMO_NOTE={
+ npu:'Активна письмова догана блокує розгляд. Від Старшого сержанта — потрібен військовий квиток. Вислуга — у фактичних днях на зміні.',
+ dbr:'Виконання нормативів — мінімальна умова, а не гарантія: рішення за керівництвом ДБР.',
+ dvk:'Активна догана (1/3 чи 2/3) блокує розгляд. Позачергове підвищення — не більше разу за кар\'єру. Докази — у службовий розділ звітності.'};
+const NGU_PROMO=['Мінімальний строк вислуги у поточному званні','Немає активних дисциплінарних стягнень','Активність: варта, патрулі, спільні операції, навчання','Позитивна характеристика і подання від командира взводу чи підрозділу'];
+let promoSel=null;
+function drawPromo(){
+  const a=S.agent||{},org=a.org||'sbu';S.promo=S.promo||{};
+  let items,title='',note='',key;
+  if(PROMO[org]){
+    const list=PROMO[org],o=ORGS[org],ri=o.ranks.indexOf(a.rank),i=promoSel!=null&&promoSel<list.length?promoSel:(ri>=0&&ri<list.length?ri:0);
+    key=org+':'+i;items=list[i].r;note=PROMO_NOTE[org]||'';
+    title=`<select class="f" id="promoSelE" aria-label="Етап підвищення">${list.map((x,j)=>`<option value="${j}" ${j===i?'selected':''}>${esc(x.t)}</option>`).join('')}</select>`;
+  }else if(org==='ngu'){key='ngu:0';items=NGU_PROMO;note='Сержантів і середній офіцерський склад затверджує начальник штабу, від Капітана — Командувач НГУ. Активна письмова догана блокує розгляд.';title='<p class="small mute" style="margin:8px 0 0">Окремих нормативів за званнями в НГУ немає — діють загальні умови (п. 1.1).</p>'}
+  else{$('promoBody').innerHTML='<p class="mute" style="margin-top:8px">Окремої системи підвищень СБУ в законодавстві NG немає — вимоги уточнюйте в Академії СБУ чи керівника.</p>';$('promoN').textContent='';return}
+  const st=S.promo[key]||[],done=items.filter((_,j)=>st[j]).length;
+  $('promoN').textContent=`${done} з ${items.length}`;
+  $('promoBody').innerHTML=title+`<ul class="wchk" style="margin-top:10px">${items.map((t,j)=>`<li><label><input type="checkbox" data-pc="${j}" ${st[j]?'checked':''}> <span>${esc(t[0].toUpperCase()+t.slice(1))}</span></label></li>`).join('')}</ul>`+(note?`<p class="small mute" style="margin-top:8px">${note}</p>`:'');
+  $('promoBody').dataset.key=key;
+}
+$('promoBody').addEventListener('change',e=>{
+  if(e.target.id==='promoSelE'){promoSel=+e.target.value;drawPromo();return}
+  const j=e.target.dataset.pc;if(j==null)return;const k=$('promoBody').dataset.key;S.promo[k]=S.promo[k]||[];S.promo[k][j]=e.target.checked;save();drawPromo()});
+
+/* ---------- встановлення ---------- */
+let instEv=null;
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();instEv=e;drawInstall()});
+function drawInstall(){
+  const standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone,ios=/iPhone|iPad|iPod/.test(navigator.userAgent);
+  $('instBtn').hidden=!instEv;
+  $('instHint').textContent=standalone?'MDT уже встановлено на цей пристрій.':instEv?'Іконка на головному екрані, відкривається на весь екран і працює без інтернету.'
+    :ios?'Safari: «Поділитися» → «На екран „Додому“».':'Відкрийте MDT за посиланням GitHub Pages у Chrome чи Edge — з’явиться кнопка встановлення. У вбудованому перегляді встановити не можна.';
+}
+$('instBtn').onclick=async()=>{if(!instEv)return;instEv.prompt();try{await instEv.userChoice}catch(e){}instEv=null;drawInstall()};
+try{if('serviceWorker' in navigator&&window.isSecureContext&&window.top===window)navigator.serviceWorker.register('sw.js').catch(()=>{})}catch(e){}
+
+/* ---------- відіграші ---------- */
+const RP=[
+ ['Боді-камера','/me {натиснув|натиснула} кнопку запису на боді-камері','/do Боді-камера веде запис, червоний індикатор горить.'],
+ ['Посвідчення','/me {дістав|дістала} службове посвідчення і {показав|показала} його затриманому','/do У посвідченні: {intro}'],
+ ['Кайданки','/me {дістав|дістала} кайданки з підсумка, {завів|завела} руки затриманого за спину і {застебнув|застебнула} кайданки','/do Кайданки застебнуто на зап\'ястях затриманого.'],
+ ['Огляд','/me {провів|провела} руками по одягу затриманого, {перевірив|перевірила} кишені, пояс і щиколотки','/do Поверхневий огляд проведено.'],
+ ['Обшук','/me {надів|наділа} рукавички і ретельно {обшукав|обшукала} затриманого та особисті речі','/do Під час обшуку знайдено: {items}.'],
+ ['Вилучення','/me {склав|склала} вилучене в пакет для речових доказів, {опечатав|опечатала} і {підписав|підписала} його','/do У пакеті з речдоками: {items}.'],
+ ['Конвоювання','/me {взяв|взяла} затриманого під лікоть і {повів|повела} за собою','/do {name}: у кайданках іде поруч під контролем.'],
+ ['В авто','/me {відчинив|відчинила} задні двері, {притримав|притримала} голову затриманому і {посадив|посадила} на заднє сидіння','/do {name}: на задньому сидінні, двері заблоковано.'],
+ ['Перевірка по базі','/me {відкрив|відкрила} службовий планшет і {перевірив|перевірила} затриманого по базі даних','/do На екрані результат перевірки по базі.'],
+ ['Зняти кайданки','/me {відімкнув|відімкнула} кайданки ключем і {зняв|зняла} їх із затриманого','/do Кайданки знято.']
+];
+function rpFill(t){
+  const f=S.rpSex==='f',d=D(),nm=d.proto.name||'Затриманий',items=d.seized.length?d.seized.map(x=>x.q?`${x.t} (${x.q})`:x.t).join(', '):'нічого забороненого';
+  return t.replace(/\{([^{}|]+)\|([^{}]+)\}/g,(_,m,w)=>f?w:m).replace(/\{name\}/g,nm).replace('{items}',items).replace('{intro}',S.agent?introOf(S.agent):'—');
+}
+function drawRP(){
+  S.rpSex=S.rpSex||'m';
+  $('rpSeg').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.sx===S.rpSex));
+  $('rpList').innerHTML=RP.map(([h,me,dd],i)=>`<li><b>${h}</b><div class="rpb"><button type="button" class="btn line sm" data-rp="${i}:0" title="${esc(rpFill(me))}">/me</button><button type="button" class="btn line sm" data-rp="${i}:1" title="${esc(rpFill(dd))}">/do</button></div></li>`).join('');
+}
+$('rpSeg').addEventListener('click',e=>{const b=e.target.closest('[data-sx]');if(!b)return;S.rpSex=b.dataset.sx;save();drawRP()});
+$('rpList').addEventListener('click',e=>{const b=e.target.closest('[data-rp]');if(!b)return;const[i,j]=b.dataset.rp.split(':').map(Number),t=rpFill(RP[i][j+1]);
+  copy(t,null).then(ok=>{if(ok){b.classList.add('used');toast(t.length>70?t.slice(0,68)+'…':t)}})});
+
+/* ---------- міні-вікно ---------- */
+let pipW=null;
+const PIP_OK='documentPictureInPicture' in window;
+async function openPip(){
+  if(!PIP_OK){toast('Міні-вікно працює в Chrome чи Edge на комп\'ютері');return}
+  if(pipW){pipW.focus();return}
+  try{pipW=await documentPictureInPicture.requestWindow({width:300,height:420})}catch(e){toast('Браузер не дозволив відкрити міні-вікно тут. Відкрийте MDT окремою вкладкою');return}
+  const doc=pipW.document;
+  document.querySelectorAll('style,link[rel=stylesheet]').forEach(n=>doc.head.appendChild(n.cloneNode(true)));
+  doc.documentElement.className=document.documentElement.className;
+  doc.body.className='pipb';
+  doc.body.innerHTML=`<div class="pip"><div class="pip-h"><span id="pName"></span><b id="pClock">60:00</b></div><div class="pip-st" id="pState"></div>
+   <div class="pip-n"><small id="pStepN"></small><b id="pStep"></b><button class="btn sm" id="pDo"></button></div>
+   <div class="pip-c0" id="pC0"></div>
+   <div class="pip-r"><small>Рація</small><input class="f pipLoc" id="pLoc" placeholder="Де ви" autocomplete="off"><div id="pCodes"></div></div></div>`;
+  doc.getElementById('pLoc').value=$('rLoc').value;
+  doc.getElementById('pLoc').addEventListener('input',e=>{$('rLoc').value=e.target.value;S.radio.loc=e.target.value;save()});
+  doc.addEventListener('click',e=>{
+    if(e.target.closest('#pDo')){const d=D(),i=d.steps.findIndex(x=>!x);
+      if(!d.timer.start||d.timer.pAt){mainAction();tick();}
+      else if(i>=0){d.steps[i]=true;save();drawSteps()}
+      drawPip();return}
+    const c=e.target.closest('[data-pc]');if(c){rSel=c.dataset.pc;drawRadio();const tx=radioText();
+      pipW.navigator.clipboard.writeText(tx).then(()=>{logAdd('radio',tx);if(/Код 0/.test(rSel)){S.c0.at=Date.now();save()}c.classList.add('used');setTimeout(()=>c.classList.remove('used'),1200)}).catch(()=>toast('Не вдалося скопіювати'))}
+  });
+  pipW.addEventListener('pagehide',()=>{pipW=null;$('pipBtn').setAttribute('aria-pressed','false')});
+  $('pipBtn').setAttribute('aria-pressed','true');drawPip();
+}
+function drawPip(){
+  if(!pipW)return;const doc=pipW.document,g=id=>doc.getElementById(id);if(!g('pClock'))return;
+  const d=D(),now=Date.now(),v=tview(d,now),i=d.steps.findIndex(x=>!x),n=d.steps.filter(Boolean).length;
+  g('pName').textContent=nameOf(d);g('pClock').textContent=fmt(v.left);g('pClock').dataset.s=v.st;g('pState').textContent=v.msg;
+  if(!d.timer.start||d.timer.pAt){g('pStepN').textContent=d.timer.pAt?'Пауза':'Відлік не почато';g('pStep').textContent=i<0?'Усі кроки виконано':STEP_TITLES[i];g('pDo').textContent=d.timer.pAt?'Продовжити':'Почати відлік';g('pDo').hidden=false}
+  else{g('pStepN').textContent=i<0?'8 з 8':`Крок ${i+1} · ${n} з 8`;g('pStep').textContent=i<0?'Усі кроки виконано':STEP_TITLES[i];g('pDo').textContent='Готово';g('pDo').hidden=i<0}
+  const c0=!$('c0Box').hidden&&S.c0&&S.c0.on&&S.c0.at;g('pC0').hidden=!c0;
+  if(c0){const l=S.c0.at+C0-now;g('pC0').innerHTML=`Код 0 через <b>${fmt(Math.max(0,l))}</b>`;g('pC0').dataset.s=l<=0?'over':l<=60000?'warn':'ok'}
+  const set=codeSet(),codes=TEN[set].g.flatMap(x=>x[1]).map(x=>x[0]),key=codes.join();
+  if(g('pCodes').dataset.k!==key){g('pCodes').dataset.k=key;g('pCodes').innerHTML=codes.map(c=>`<button data-pc="${c}">${c}</button>`).join('')}
+}
+$('pipBtn').onclick=openPip;
+$('pipBtn').hidden=!PIP_OK||matchMedia('(pointer:coarse)').matches;
+
 function applyTheme(){delete document.documentElement.dataset.theme}
 
 
-function renderAll(){if($('pOfficerBtn')){const l=officerLine();$('pOfficerBtn').textContent=l||'Заповнити профіль';$('pOfficerBtn').classList.toggle('empty',!l);$('setAgentTxt').textContent=S.agent?`${S.agent.mask?S.agent.call:S.agent.name} · №${S.agent.badge}`:'Заповнити профіль'}applyTheme();document.documentElement.classList.toggle('big',!!S.opt.big);applyOrg();drawWho();drawSteps();drawCase();drawSeized();fillProtoInputs();drawProto();drawW();tick()}
+function renderAll(){if($('pOfficerBtn')){const l=officerLine();$('pOfficerBtn').textContent=l||'Заповнити профіль';$('pOfficerBtn').classList.toggle('empty',!l);$('setAgentTxt').textContent=S.agent?`${S.agent.mask?S.agent.call:S.agent.name} · №${S.agent.badge}`:'Заповнити профіль'}applyTheme();document.documentElement.classList.toggle('big',!!S.opt.big);applyOrg();drawTen();drawRadio();drawQ();drawLog();drawPromo();drawInstall();drawRP();drawWho();drawSteps();drawCase();drawSeized();fillProtoInputs();drawProto();drawW();tick()}
+$('protoLog').onclick=()=>{if(logDet(D()))toast('Затримання записано в журнал');else toast('Додайте статті або ім\'я затриманого')};
 renderAll();show(S.tab);setInterval(tick,250);
 if(!S.agent&&!S.agentAsked)setTimeout(()=>openAgent(true),400);
 </script>
